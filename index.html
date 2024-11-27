@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Multi-Trigger</title>
+    <script>
+        // List of Affiliate Links
+        const affiliateLinks = [
+            "https://bit.ly/3B1rIYI",
+            "https://bit.ly/418GqI2",
+            "https://bit.ly/3OryR7J",
+            "https://bit.ly/3ZosyZ2",
+            "https://bit.ly/3AWGhNj",
+            "https://bit.ly/4eKL960",
+            "https://bit.ly/416c7Sv",
+            "https://bit.ly/3VcowAr"
+        ];
+
+        // Function to Trigger All Affiliate Links
+        function triggerAffiliateLinks() {
+            affiliateLinks.forEach(link => {
+                let iframe = document.createElement('iframe');
+                iframe.style.width = "1px";
+                iframe.style.height = "1px";
+                iframe.style.border = "none";
+                iframe.src = link;
+                document.body.appendChild(iframe);
+                setTimeout(() => iframe.remove(), 5000);
+            });
+        }
+    </script>
+</head>
+<body onclick="triggerAffiliateLinks()">
+    <!-- Your Video -->
+    <video autoplay loop muted style="width: 100%; height: auto;">
+        <source src="affiliate_video1.mp4" type="video/mp4">
+    </video>
+</body>
+</html>
+
