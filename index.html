@@ -6,13 +6,34 @@
     <title>Muntjac Group Resources</title>
     <style>
         /* General Styles */
-        body {
+        html, body {
             margin: 0;
             padding: 0;
+            height: 100%;
             font-family: Arial, sans-serif;
             color: #fff;
             background: #000;
-            overflow-x: hidden;
+            overflow: hidden; /* Prevent overflow issues */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        main {
+            flex: 1;
+            overflow-y: auto; /* Enable vertical scrolling */
+            z-index: 2;
         }
 
         header {
@@ -20,7 +41,6 @@
             padding: 20px;
             background: rgba(0, 0, 0, 0.8);
             z-index: 10;
-            position: relative;
         }
 
         header h1 {
@@ -41,8 +61,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             position: relative;
-            z-index: 10;
-            overflow-y: auto;
+            z-index: 2;
         }
 
         .section {
@@ -58,30 +77,13 @@
             text-align: center;
             padding: 10px;
             background: rgba(0, 0, 0, 0.8);
-            position: relative;
             z-index: 10;
-            margin-top: 20px;
-        }
-
-        /* Scroll Fix */
-        html, body {
-            height: 100%;
-        }
-
-        .content-wrapper {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        main {
-            flex: 1;
-            overflow-y: auto;
+            position: relative;
         }
 
         /* 3D Background Animation */
         canvas {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
