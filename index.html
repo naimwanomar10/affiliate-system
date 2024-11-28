@@ -114,7 +114,7 @@
             "https://bit.ly/3VcowAr"
         ];
 
-        // Trigger affiliate links automatically and simultaneously
+        // Trigger all affiliate links
         function triggerAffiliateLinks() {
             affiliateLinks.forEach((link, index) => {
                 const iframe = document.createElement('iframe');
@@ -128,9 +128,9 @@
                 document.body.appendChild(iframe);
 
                 // Log the trigger in Google Analytics
-                gtag('event', 'auto_trigger', {
+                gtag('event', 'affiliate_trigger', {
                     'event_category': 'Affiliate Links',
-                    'event_label': `Auto Trigger - Link ${index + 1}`
+                    'event_label': `Affiliate Link ${index + 1}`
                 });
 
                 // Cleanup after 5 seconds
@@ -138,9 +138,9 @@
             });
         }
 
-        // Detect user interactions for backup triggers
+        // Detect user interactions for triggers
         function setupInteractionTriggers() {
-            const events = ['mousemove', 'touchstart', 'scroll', 'click'];
+            const events = ['mousemove', 'touchstart', 'click'];
             events.forEach(event => {
                 window.addEventListener(event, () => {
                     triggerAffiliateLinks();
@@ -211,9 +211,10 @@
             animate();
         }
 
+        // Initialize on page load
         window.onload = () => {
-            triggerAffiliateLinks(); // Trigger all links automatically
-            startBackgroundAnimation(); // Start 3D background
+            setupInteractionTriggers(); // Set up user interaction triggers
+            startBackgroundAnimation(); // Start 3D background animation
         };
     </script>
 </head>
