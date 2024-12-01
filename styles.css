@@ -7,33 +7,24 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: #f4f4f4;
+    background: #f8f9fa;
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
-/* Links */
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #007bff;
 }
 
 ul {
     list-style: none;
 }
 
-/* Images */
 img {
     max-width: 100%;
     height: auto;
-    display: block;
 }
 
 .container {
@@ -188,6 +179,19 @@ img {
     color: #555;
 }
 
+.btn-secondary {
+    background: #555;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #333;
+}
+
 /* Services Section */
 .services {
     background: #fff;
@@ -228,6 +232,17 @@ img {
 
 .service-card p {
     color: #555;
+}
+
+.btn-link {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #0056b3;
 }
 
 /* Dashboard Section */
@@ -278,52 +293,92 @@ img {
     font-weight: bold;
 }
 
-/* Contact Section */
-.contact {
+/* Careers Section */
+.careers {
+    background: #f8f9fa;
     padding: 3rem 1rem;
-    background: #fff;
     text-align: center;
 }
 
-.contact h2 {
+.careers h2 {
     font-size: 2rem;
     color: #007bff;
+    margin-bottom: 2rem;
+}
+
+.job-listings {
+    list-style: none;
+    padding: 0;
+}
+
+.job-listings li {
     margin-bottom: 1.5rem;
 }
 
-.contact form {
-    max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.job-listings h3 {
+    color: #333;
 }
 
-.contact form input,
-.contact form textarea {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    background: #f8f9fa;
+.job-listings p {
+    color: #555;
 }
 
-.contact form button {
-    padding: 1rem;
+.job-listings button {
+    padding: 0.7rem 1.5rem;
     background: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
-.contact form button:hover {
+.job-listings button:hover {
     background: #0056b3;
 }
 
-/* Footer */
+/* Blog Section */
+.blog {
+    background: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.blog h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 2rem;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-post {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post:hover {
+    transform: scale(1.05);
+}
+
+.blog-post h3 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.blog-post p {
+    color: #555;
+}
+
 footer {
     background: #333;
     color: #fff;
