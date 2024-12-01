@@ -3,40 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muntjac Group Resources - Advanced solutions for modern businesses.">
-    <meta name="keywords" content="Healthcare, IT Solutions, Corporate Services, Innovation">
-    <meta name="author" content="Muntjac Group Resources">
-    <meta name="theme-color" content="#007BFF">
-    <title>Muntjac Group Resources - Ultimate Website</title>
+    <meta name="description" content="Muntjac Group Resources - The ultimate platform for IT, healthcare, and corporate solutions.">
+    <meta name="keywords" content="Business Solutions, IT Services, Healthcare, Corporate Tools, SEO">
+    <meta name="author" content="Muntjac Group">
+    <title>Muntjac Group Resources</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/favicon.png" type="image/png">
-    <style>
-        /* Preloader */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-        #preloader .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(0, 123, 255, 0.2);
-            border-top: 5px solid #007BFF;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-    </style>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Preloader -->
@@ -47,17 +20,14 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <img src="assets/logo.png" alt="Muntjac Group Logo">
-                <h1>Muntjac Group Resources</h1>
-            </div>
+            <h1>Muntjac Group Resources</h1>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -67,80 +37,94 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-slider">
-            <div class="slide">
-                <img src="assets/hero1.jpg" alt="Healthcare Solutions">
-                <h2>Innovating Healthcare</h2>
-                <p>Delivering advanced medical tools for modern care.</p>
-            </div>
-            <div class="slide">
-                <img src="assets/hero2.jpg" alt="IT Infrastructure">
-                <h2>Empowering IT Systems</h2>
-                <p>Creating smarter solutions for seamless workflows.</p>
-            </div>
+        <div class="hero-content">
+            <h2>Innovate. Empower. Succeed.</h2>
+            <p>Leading the way in IT, healthcare, and corporate solutions for over a decade.</p>
+            <a href="#about" class="btn-primary">Explore More</a>
         </div>
     </section>
 
     <!-- About Us -->
-    <section id="about">
+    <section id="about" class="about">
         <h2>About Us</h2>
-        <p>We are a leading provider of healthcare and IT solutions, dedicated to transforming industries with advanced tools and technology.</p>
+        <p>Muntjac Group Resources is a pioneer in providing advanced business tools and services that drive innovation and growth.</p>
         <div class="stats">
             <div>
                 <h3>10+</h3>
-                <p>Years of Excellence</p>
+                <p>Years of Experience</p>
             </div>
             <div>
-                <h3>1000+</h3>
+                <h3>500+</h3>
                 <p>Global Clients</p>
             </div>
+            <div>
+                <h3>2000+</h3>
+                <p>Projects Delivered</p>
+            </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
+    <!-- Services -->
+    <section id="services" class="services">
         <h2>Our Services</h2>
-        <div class="services-container">
-            <div class="service">
-                <img src="assets/service1.jpg" alt="Healthcare">
-                <h3>Healthcare Equipment</h3>
-                <p>Delivering the best tools for healthcare professionals.</p>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Healthcare Solutions</h3>
+                <p>Top-tier medical tools and equipment.</p>
+            </div>
+            <div class="service-card">
+                <h3>IT Infrastructure</h3>
+                <p>Robust IT systems for seamless operations.</p>
+            </div>
+            <div class="service-card">
+                <h3>Corporate Tools</h3>
+                <p>Efficient tools to enhance productivity.</p>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team">
-        <h2>Meet the Team</h2>
-        <div class="team-container">
-            <div class="team-member">
-                <img src="assets/team1.jpg" alt="Team Member 1">
-                <h3>Nuril Naim Ilham</h3>
-                <p>CEO</p>
+    <!-- Dashboard -->
+    <section id="dashboard" class="dashboard">
+        <h2>Performance Dashboard</h2>
+        <canvas id="chart"></canvas>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>"Muntjac Group transformed our business. Highly recommend their services."</p>
+                <footer>- Client A</footer>
+            </div>
+            <div class="testimonial">
+                <p>"Exceptional service and support. A true industry leader."</p>
+                <footer>- Client B</footer>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form -->
-    <section id="contact">
+    <!-- Contact -->
+    <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <form action="https://example.com/submit" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Muntjac Group Resources. All rights reserved.</p>
+        <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
     </footer>
 
     <script>
         // Preloader
         window.onload = function() {
-            const preloader = document.getElementById("preloader");
-            preloader.style.display = "none";
+            const preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
         };
 
         // Smooth Scroll
@@ -153,34 +137,19 @@
             });
         });
 
-        // Hero Slider
-        let currentSlide = 0;
-        const slides = document.querySelectorAll(".hero .slide");
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.display = i === index ? "block" : "none";
-            });
-        }
-
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }, 3000);
-
-        showSlide(currentSlide);
-
-        // Form Validation
-        const form = document.querySelector("form");
-        form.addEventListener("submit", function(e) {
-            const name = form.name.value.trim();
-            const email = form.email.value.trim();
-            const message = form.message.value.trim();
-
-            if (!name || !email || !message) {
-                e.preventDefault();
-                alert("Please fill out all fields.");
+        // Chart.js - Dashboard
+        const ctx = document.getElementById('chart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Revenue Growth',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    borderWidth: 1
+                }]
             }
         });
     </script>
