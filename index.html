@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muntjac Group Resources - The ultimate platform for IT, healthcare, and corporate solutions.">
-    <meta name="keywords" content="Business Solutions, IT Services, Healthcare, Corporate Tools, SEO">
-    <meta name="author" content="Muntjac Group">
+    <meta name="description" content="Muntjac Group Resources - Leading solutions in IT, healthcare, and business tools.">
+    <meta name="keywords" content="Business Solutions, IT Services, Healthcare, Corporate Tools">
+    <meta name="author" content="Muntjac Group Resources">
     <title>Muntjac Group Resources</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
@@ -20,7 +20,9 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1>Muntjac Group Resources</h1>
+            <div class="logo">
+                <h1>Muntjac Group Resources</h1>
+            </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -29,6 +31,7 @@
                     <li><a href="#products">Products</a></li>
                     <li><a href="#dashboard">Dashboard</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -39,113 +42,165 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h2>Innovate. Empower. Succeed.</h2>
-            <p>Leading the way in IT, healthcare, and corporate solutions for over a decade.</p>
-            <a href="#about" class="btn-primary">Explore More</a>
+            <p>Providing cutting-edge solutions for healthcare, IT, and corporate needs.</p>
+            <a href="#about" class="btn-primary">Discover More</a>
         </div>
     </section>
 
     <!-- About Us -->
     <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>Muntjac Group Resources is a pioneer in providing advanced business tools and services that drive innovation and growth.</p>
-        <div class="stats">
-            <div>
-                <h3>10+</h3>
-                <p>Years of Experience</p>
-            </div>
-            <div>
-                <h3>500+</h3>
-                <p>Global Clients</p>
-            </div>
-            <div>
-                <h3>2000+</h3>
-                <p>Projects Delivered</p>
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are committed to delivering innovative and reliable business solutions for over a decade.</p>
+            <div class="stats">
+                <div>
+                    <h3>10+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div>
+                    <h3>500+</h3>
+                    <p>Global Clients</p>
+                </div>
+                <div>
+                    <h3>3000+</h3>
+                    <p>Projects Completed</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services -->
     <section id="services" class="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Healthcare Solutions</h3>
-                <p>Top-tier medical tools and equipment.</p>
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Healthcare Solutions</h3>
+                    <p>Providing world-class medical equipment and tools.</p>
+                </div>
+                <div class="service-card">
+                    <h3>IT Infrastructure</h3>
+                    <p>Delivering reliable and scalable IT systems for seamless business operations.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Corporate Tools</h3>
+                    <p>Boost productivity with our cutting-edge tools.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>IT Infrastructure</h3>
-                <p>Robust IT systems for seamless operations.</p>
-            </div>
-            <div class="service-card">
-                <h3>Corporate Tools</h3>
-                <p>Efficient tools to enhance productivity.</p>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-carousel">
+                <div class="product-item">
+                    <img src="assets/product1.jpg" alt="Product 1">
+                    <h3>Product 1</h3>
+                    <p>High-quality and reliable solutions for professionals.</p>
+                </div>
+                <div class="product-item">
+                    <img src="assets/product2.jpg" alt="Product 2">
+                    <h3>Product 2</h3>
+                    <p>Advanced tools to enhance your operations.</p>
+                </div>
+                <div class="product-item">
+                    <img src="assets/product3.jpg" alt="Product 3">
+                    <h3>Product 3</h3>
+                    <p>Built for precision and efficiency.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Dashboard -->
     <section id="dashboard" class="dashboard">
-        <h2>Performance Dashboard</h2>
-        <canvas id="chart"></canvas>
+        <div class="container">
+            <h2>Performance Dashboard</h2>
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2>Latest Articles</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <h3>Innovation in Healthcare</h3>
+                    <p>Discover the latest trends and advancements.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Top IT Strategies for 2024</h3>
+                    <p>Stay ahead in the competitive IT landscape.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Corporate Productivity Tools</h3>
+                    <p>Optimize your workflow with the right tools.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Testimonials -->
     <section id="testimonials" class="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial">
-                <p>"Muntjac Group transformed our business. Highly recommend their services."</p>
-                <footer>- Client A</footer>
-            </div>
-            <div class="testimonial">
-                <p>"Exceptional service and support. A true industry leader."</p>
-                <footer>- Client B</footer>
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"Muntjac Group exceeded our expectations with their exceptional service."</p>
+                    <footer>- Client A</footer>
+                </div>
+                <div class="testimonial">
+                    <p>"Their healthcare solutions transformed our operations entirely."</p>
+                    <footer>- Client B</footer>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form action="https://example.com/submit" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="https://example.com/submit" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
+            <ul>
+                <li><a href="#privacy-policy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        // Preloader
         window.onload = function() {
-            const preloader = document.getElementById('preloader');
-            preloader.style.display = 'none';
+            document.getElementById('preloader').style.display = 'none';
         };
 
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
-            });
-        });
-
-        // Chart.js - Dashboard
-        const ctx = document.getElementById('chart').getContext('2d');
-        const chart = new Chart(ctx, {
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                 datasets: [{
                     label: 'Revenue Growth',
-                    data: [12, 19, 3, 5, 2, 3],
+                    data: [10, 15, 8, 12, 18, 25],
                     backgroundColor: 'rgba(0, 123, 255, 0.2)',
                     borderColor: 'rgba(0, 123, 255, 1)',
                     borderWidth: 1
