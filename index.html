@@ -3,77 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muntjac Group Resources: Innovative Solutions and Exceptional Services">
+    <meta name="keywords" content="Muntjac Group Resources, Medical Equipment, Office Supplies, IT Solutions">
+    <meta name="author" content="Muntjac Group Resources">
     <title>Muntjac Group Resources</title>
     <link rel="stylesheet" href="static/css/styles.css">
-    <script src="static/js/scripts.js" defer></script>
+    <link rel="icon" href="assets/logo.png" type="image/png">
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner"></div>
+    <!-- 3D Canvas Background -->
+    <div id="canvas-container">
+        <canvas id="backgroundCanvas"></canvas>
     </div>
 
-    <!-- Background Canvas -->
-    <canvas id="backgroundCanvas"></canvas>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">Muntjac Group</div>
-        <ul class="nav-links">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><button id="toggle-dark-mode">Dark Mode</button></li>
-        </ul>
-    </nav>
-
-    <!-- Content -->
-    <div class="content-wrapper">
-        <header>
-            <h1>Muntjac Group Resources</h1>
-            <p>Innovative Solutions, Exceptional Services</p>
-        </header>
-        <main>
-            <section id="about">
-                <h2>About Us</h2>
-                <p>Muntjac Group Resources specializes in delivering high-quality medical equipment, laboratory tools, and office supplies.</p>
-            </section>
-            <section id="services">
-                <h2>Services</h2>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="header-container">
+            <img src="assets/logo.png" alt="Muntjac Group Logo" class="logo">
+            <nav>
                 <ul>
-                    <li>Medical Equipment and Consumables</li>
-                    <li>Laboratory Tools and Furniture</li>
-                    <li>Office Equipment and Supplies</li>
-                    <li>IT Solutions and Maintenance</li>
-                    <li>Event Services and Equipment</li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQs</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-            </section>
-            <section id="testimonials">
-                <h2>Testimonials</h2>
-                <div id="testimonials-content"></div>
-            </section>
-            <section id="faq">
-                <h2>FAQ</h2>
-                <div id="faq-content"></div>
-            </section>
-            <section id="contact">
-                <h2>Contact Us</h2>
-                <form id="contact-form" action="features/contact.py" method="post">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
-        </footer>
-    </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <h1>Welcome to Muntjac Group Resources</h1>
+        <p>Your partner in innovation and exceptional services since 2023.</p>
+        <button onclick="scrollToSection('about')">Discover More</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Muntjac Group Resources specializes in delivering high-quality medical equipment, laboratory tools, office supplies, and IT solutions.
+            Our commitment to innovation and efficiency ensures we meet and exceed client expectations.
+        </p>
+        <div>
+            <img src="assets/about_image.jpg" alt="About Us Image" class="about-image">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Medical Equipment and Consumables</li>
+            <li>Laboratory Tools and Furniture</li>
+            <li>Office Equipment and Supplies</li>
+            <li>IT Solutions and Maintenance</li>
+            <li>Building Maintenance</li>
+            <li>Event Equipment and Services</li>
+        </ul>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Our Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="assets/project1.jpg" alt="Project 1">
+                <p>Lab Equipment Installation</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/project2.jpg" alt="Project 2">
+                <p>Nationwide Office Supplies</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/project3.jpg" alt="Project 3">
+                <p>IT Infrastructure Setup</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/project4.jpg" alt="Project 4">
+                <p>Custom Safety Solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="assets/team1.jpg" alt="Team Member 1">
+                <h3>Nuril Naim Ilham</h3>
+                <p>Chief Executive Officer</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/team2.jpg" alt="Team Member 2">
+                <h3>Sarah Lee</h3>
+                <p>Operations Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/team3.jpg" alt="Team Member 3">
+                <h3>Mohammed Ali</h3>
+                <p>Head of IT</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/team4.jpg" alt="Team Member 4">
+                <h3>Aisha Patel</h3>
+                <p>Marketing Head</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-container">
+            <blockquote>
+                <p>"Muntjac Group transformed our office with their innovative solutions."</p>
+                <footer>- John Doe, CEO of Innovate Tech</footer>
+            </blockquote>
+            <blockquote>
+                <p>"Excellent service! Highly recommended."</p>
+                <footer>- Jane Smith, Head of Procurement</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What does Muntjac Group do?</h3>
+            <p>We provide innovative solutions for medical, IT, and office needs.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I contact you?</h3>
+            <p>Email us at muntjac.group@gmail.com or call us at +6011-21800890.</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>Our Blog</h2>
+        <div class="blog-post">
+            <h3>Top Trends in Medical Equipment</h3>
+            <p>Discover the latest innovations in the medical industry.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="blog-post">
+            <h3>How to Optimize Your Office for Productivity</h3>
+            <p>Learn how to create a workspace that boosts efficiency.</p>
+            <a href="#">Read More</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
+        <p><a href="#privacy-policy">Privacy Policy</a> | <a href="#terms-of-use">Terms of Use</a></p>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="static/js/scripts.js"></script>
 </body>
 </html>
