@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muntjac Group Resources</title>
-    <!-- External Styles -->
+    <!-- Link to external CSS -->
     <link rel="stylesheet" href="static/css/styles.css">
-    <!-- External Scripts -->
-    <script src="static/js/particles.js" defer></script>
+    <!-- Link to external JS -->
     <script src="static/js/scripts.js" defer></script>
 </head>
 <body>
@@ -16,10 +15,10 @@
         <div class="spinner"></div>
     </div>
 
-    <!-- 3D Background -->
+    <!-- Background Canvas -->
     <canvas id="backgroundCanvas"></canvas>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
         <div class="logo">Muntjac Group</div>
         <ul class="nav-links">
@@ -32,49 +31,47 @@
         </ul>
     </nav>
 
+    <!-- Content -->
     <div class="content-wrapper">
         <header>
             <h1>Muntjac Group Resources</h1>
             <p>Innovative Solutions, Exceptional Services</p>
         </header>
         <main>
-            <div class="content">
-                <section id="about">
-                    <h2>About Us</h2>
-                    <p>Muntjac Group Resources specializes in delivering high-quality medical equipment, laboratory tools, office supplies, and more. Established in 2023, we are committed to providing innovative solutions for diverse needs.</p>
-                </section>
-                <section id="services">
-                    <h2>Services</h2>
-                    <ul>
-                        <li>Medical Equipment and Consumables</li>
-                        <li>Laboratory Tools and Furniture</li>
-                        <li>Office Equipment</li>
-                        <li>IT Solutions</li>
-                        <li>Building Maintenance</li>
-                        <li>Customized Printing</li>
-                    </ul>
-                </section>
-                <section id="testimonials">
-                    <h2>Testimonials</h2>
-                    <div id="testimonials-content"></div>
-                </section>
-                <section id="faq">
-                    <h2>FAQ</h2>
-                    <div id="faq-content"></div>
-                </section>
-                <section id="contact">
-                    <h2>Contact Us</h2>
-                    <form id="contact-form" action="features/contact.py" method="post">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
-                </section>
-            </div>
+            <section id="about">
+                <h2>About Us</h2>
+                <p>Muntjac Group Resources specializes in delivering high-quality medical equipment, laboratory tools, and office supplies.</p>
+            </section>
+            <section id="services">
+                <h2>Services</h2>
+                <ul>
+                    <li>Medical Equipment and Consumables</li>
+                    <li>Laboratory Tools and Furniture</li>
+                    <li>Office Equipment and Supplies</li>
+                    <li>IT Solutions and Maintenance</li>
+                    <li>Event Services and Equipment</li>
+                </ul>
+            </section>
+            <section id="testimonials">
+                <h2>Testimonials</h2>
+                <div id="testimonials-content"></div>
+            </section>
+            <section id="faq">
+                <h2>FAQ</h2>
+                <div id="faq-content"></div>
+            </section>
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <form id="contact-form" action="features/contact.py" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
         </main>
         <footer>
             <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
