@@ -112,3 +112,26 @@ button {
 
 button:hover {
     background: #0088cc;
+}
+
+body.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode nav {
+    background: rgba(18, 18, 18, 0.8);
+}
+
+body.dark-mode button {
+    background: #333333;
+    color: #ffffff;
+}
+
+body.dark-mode button:hover {
+    background: #555555;
+}
+
+body.dark-mode h2 {
+    color: #1e90ff;
+}
