@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muntjac Group Resources - The ultimate platform for IT, healthcare, and corporate solutions.">
-    <meta name="keywords" content="Business Solutions, IT Services, Healthcare, Corporate Tools, SEO">
+    <meta name="description" content="Muntjac Group Resources - Innovating IT, healthcare, and corporate solutions.">
+    <meta name="keywords" content="IT Solutions, Corporate Tools, Healthcare Services, Technology, Business Growth">
     <meta name="author" content="Muntjac Group">
-    <meta property="og:title" content="Muntjac Group Resources">
-    <meta property="og:description" content="Innovate, empower, and succeed with our advanced business solutions.">
-    <meta property="og:image" content="assets/og-image.jpg">
-    <meta property="og:url" content="https://yourwebsite.com">
-    <meta name="twitter:card" content="summary_large_image">
     <title>Muntjac Group Resources</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <!-- Preloader -->
@@ -34,6 +30,8 @@
                     <li><a href="#products">Products</a></li>
                     <li><a href="#dashboard">Dashboard</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -47,12 +45,16 @@
             <p>Leading the way in IT, healthcare, and corporate solutions for over a decade.</p>
             <a href="#about" class="btn-primary">Explore More</a>
         </div>
+        <div class="hero-animation">
+            <!-- Animated 3D Background -->
+            <canvas id="heroCanvas"></canvas>
+        </div>
     </section>
 
     <!-- About Us -->
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>Muntjac Group Resources is a pioneer in providing advanced business tools and services that drive innovation and growth.</p>
+        <p>Muntjac Group Resources is a leader in providing advanced solutions to enhance business growth and operational efficiency.</p>
         <div class="stats">
             <div>
                 <h3>10+</h3>
@@ -67,6 +69,7 @@
                 <p>Projects Delivered</p>
             </div>
         </div>
+        <button class="btn-secondary" onclick="openModal('aboutModal')">Learn More</button>
     </section>
 
     <!-- Services -->
@@ -76,22 +79,26 @@
             <div class="service-card">
                 <h3>Healthcare Solutions</h3>
                 <p>Top-tier medical tools and equipment.</p>
+                <a href="#healthcare" class="btn-link">Learn More</a>
             </div>
             <div class="service-card">
                 <h3>IT Infrastructure</h3>
                 <p>Robust IT systems for seamless operations.</p>
+                <a href="#it" class="btn-link">Learn More</a>
             </div>
             <div class="service-card">
                 <h3>Corporate Tools</h3>
                 <p>Efficient tools to enhance productivity.</p>
+                <a href="#corporate" class="btn-link">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- Performance Dashboard -->
+    <!-- Dashboard -->
     <section id="dashboard" class="dashboard">
         <h2>Performance Dashboard</h2>
         <canvas id="chart"></canvas>
+        <button class="btn-secondary" onclick="toggleChart()">View Detailed Analytics</button>
     </section>
 
     <!-- Testimonials -->
@@ -106,10 +113,49 @@
                 <p>"Exceptional service and support. A true industry leader."</p>
                 <footer>- Client B</footer>
             </div>
+            <div class="testimonial">
+                <p>"Their IT infrastructure solutions are unparalleled."</p>
+                <footer>- Client C</footer>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Careers -->
+    <section id="careers" class="careers">
+        <h2>Join Our Team</h2>
+        <p>We’re always looking for talented individuals. Check out our current openings:</p>
+        <ul class="job-listings">
+            <li>
+                <h3>Software Engineer</h3>
+                <p>Location: Remote | Full-Time</p>
+                <button class="btn-primary">Apply Now</button>
+            </li>
+            <li>
+                <h3>IT Support Specialist</h3>
+                <p>Location: Kuala Lumpur | Full-Time</p>
+                <button class="btn-primary">Apply Now</button>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="blog">
+        <h2>Latest News & Insights</h2>
+        <div class="blog-grid">
+            <div class="blog-post">
+                <h3>How IT Solutions Can Transform Your Business</h3>
+                <p>Discover the latest trends in IT infrastructure and corporate growth.</p>
+                <a href="#readmore" class="btn-link">Read More</a>
+            </div>
+            <div class="blog-post">
+                <h3>5 Key Benefits of Advanced Healthcare Tools</h3>
+                <p>Learn how our healthcare solutions are revolutionizing the industry.</p>
+                <a href="#readmore" class="btn-link">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <form action="https://example.com/submit" method="POST">
@@ -157,6 +203,14 @@
                 }]
             }
         });
+
+        function toggleChart() {
+            alert('Detailed analytics will be available soon!');
+        }
+
+        function openModal(modalId) {
+            alert(`Modal ${modalId} opened!`);
+        }
     </script>
 </body>
 </html>
