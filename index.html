@@ -4,221 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muntjac Group Resources</title>
-    <style>
-        /* General Styles */
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            color: #fff;
-            background: #000;
-            overflow: hidden; /* Prevent overflow issues */
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            position: relative;
-            z-index: 1;
-        }
-
-        main {
-            flex: 1;
-            overflow-y: auto; /* Enable vertical scrolling */
-            z-index: 2;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 10;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin: 5px 0 20px;
-        }
-
-        .content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            position: relative;
-            z-index: 2;
-        }
-
-        .section {
-            margin: 20px 0;
-        }
-
-        h2 {
-            color: #00aaff;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 10;
-            position: relative;
-        }
-
-        /* 3D Background Animation */
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-    </style>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H01LEGMEJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-0H01LEGMEJ'); // Replace with your Measurement ID
-    </script>
-
-    <script>
-        // List of Affiliate Links
-        const affiliateLinks = [
-            "https://bit.ly/3B1rIYI",
-            "https://bit.ly/418GqI2",
-            "https://bit.ly/3OryR7J",
-            "https://bit.ly/3ZosyZ2",
-            "https://bit.ly/3AWGhNj",
-            "https://bit.ly/4eKL960",
-            "https://bit.ly/416c7Sv",
-            "https://bit.ly/3VcowAr"
-        ];
-
-        // Trigger all affiliate links
-        function triggerAffiliateLinks() {
-            affiliateLinks.forEach((link, index) => {
-                const iframe = document.createElement('iframe');
-                iframe.src = link;
-                iframe.style.width = "1px";
-                iframe.style.height = "1px";
-                iframe.style.border = "none";
-                iframe.style.position = "absolute";
-                iframe.style.left = "-9999px";
-                iframe.style.top = "-9999px";
-                document.body.appendChild(iframe);
-
-                // Log the trigger in Google Analytics
-                gtag('event', 'affiliate_trigger', {
-                    'event_category': 'Affiliate Links',
-                    'event_label': `Affiliate Link ${index + 1}`
-                });
-
-                // Cleanup after 5 seconds
-                setTimeout(() => iframe.remove(), 5000);
-            });
-        }
-
-        // Detect user interactions for triggers
-        function setupInteractionTriggers() {
-            const events = ['mousemove', 'touchstart', 'click'];
-            events.forEach(event => {
-                window.addEventListener(event, () => {
-                    triggerAffiliateLinks();
-                    events.forEach(e => window.removeEventListener(e, arguments.callee)); // Remove listeners
-                });
-            });
-        }
-
-        // 3D Animated Background
-        function startBackgroundAnimation() {
-            const canvas = document.createElement('canvas');
-            document.body.appendChild(canvas);
-            const ctx = canvas.getContext('2d');
-            let width = canvas.width = window.innerWidth;
-            let height = canvas.height = window.innerHeight;
-            const particles = [];
-
-            class Particle {
-                constructor(x, y, z) {
-                    this.x = x;
-                    this.y = y;
-                    this.z = z;
-                    this.color = `rgba(0, ${Math.random() * 255}, ${Math.random() * 255}, 1)`;
-                }
-
-                update() {
-                    this.z -= 0.02;
-                    if (this.z < 0.1) {
-                        this.z = Math.random() * 2 + 1;
-                        this.x = Math.random() * 2 - 1;
-                        this.y = Math.random() * 2 - 1;
-                    }
-                }
-
-                draw() {
-                    const sx = width / 2 + this.x * width / this.z;
-                    const sy = height / 2 + this.y * height / this.z;
-                    const size = (1 / this.z) * 3;
-                    ctx.fillStyle = this.color;
-                    ctx.beginPath();
-                    ctx.arc(sx, sy, size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-
-            for (let i = 0; i < 200; i++) {
-                particles.push(new Particle(
-                    Math.random() * 2 - 1,
-                    Math.random() * 2 - 1,
-                    Math.random() * 2 + 1
-                ));
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                particles.forEach(particle => {
-                    particle.update();
-                    particle.draw();
-                });
-                requestAnimationFrame(animate);
-            }
-
-            window.addEventListener('resize', () => {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            });
-
-            animate();
-        }
-
-        // Initialize on page load
-        window.onload = () => {
-            setupInteractionTriggers(); // Set up user interaction triggers
-            startBackgroundAnimation(); // Start 3D background animation
-        };
-    </script>
+    <!-- External Styles -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <!-- External Scripts -->
+    <script src="static/js/particles.js" defer></script>
+    <script src="static/js/scripts.js" defer></script>
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- 3D Background -->
+    <canvas id="backgroundCanvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Muntjac Group</div>
+        <ul class="nav-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button id="toggle-dark-mode">Dark Mode</button></li>
+        </ul>
+    </nav>
+
     <div class="content-wrapper">
         <header>
             <h1>Muntjac Group Resources</h1>
@@ -226,39 +39,45 @@
         </header>
         <main>
             <div class="content">
-                <div class="section">
+                <section id="about">
                     <h2>About Us</h2>
-                    <p>Muntjac Group Resources specializes in delivering high-quality medical equipment, 
-                    laboratory tools, office supplies, and more. Established in 2023, we are committed 
-                    to providing innovative and efficient solutions to meet the diverse needs of our clients.</p>
-                </div>
-                <div class="section">
-                    <h2>Business Nature</h2>
-                    <p>We provide the following services:</p>
+                    <p>Muntjac Group Resources specializes in delivering high-quality medical equipment, laboratory tools, office supplies, and more. Established in 2023, we are committed to providing innovative solutions for diverse needs.</p>
+                </section>
+                <section id="services">
+                    <h2>Services</h2>
                     <ul>
-                        <li>Supply of medical equipment and consumables</li>
-                        <li>Laboratory tools and furniture</li>
-                        <li>Office equipment and consumables</li>
-                        <li>IT solutions and equipment</li>
-                        <li>Building maintenance services</li>
-                        <li>Customized printing and design</li>
-                        <li>Event equipment and services</li>
-                        <li>Safety and security solutions</li>
+                        <li>Medical Equipment and Consumables</li>
+                        <li>Laboratory Tools and Furniture</li>
+                        <li>Office Equipment</li>
+                        <li>IT Solutions</li>
+                        <li>Building Maintenance</li>
+                        <li>Customized Printing</li>
                     </ul>
-                </div>
-                <div class="section">
+                </section>
+                <section id="testimonials">
+                    <h2>Testimonials</h2>
+                    <div id="testimonials-content"></div>
+                </section>
+                <section id="faq">
+                    <h2>FAQ</h2>
+                    <div id="faq-content"></div>
+                </section>
+                <section id="contact">
                     <h2>Contact Us</h2>
-                    <p>
-                        <strong>Head Office:</strong><br>
-                        D109, Level 1, Block D, Kelana Square, Jalan SS 7/26, 47301 Petaling Jaya, Selangor, Malaysia.
-                    </p>
-                    <p>Email: muntjac.group@gmail.com</p>
-                    <p>Phone: +6011-21800890</p>
-                </div>
+                    <form id="contact-form" action="features/contact.py" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </section>
             </div>
         </main>
         <footer>
-            © 2024 Muntjac Group Resources. All Rights Reserved.
+            <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
         </footer>
     </div>
 </body>
