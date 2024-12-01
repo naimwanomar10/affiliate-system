@@ -11,21 +11,29 @@ body {
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
+/* Links */
 a {
     text-decoration: none;
     color: inherit;
     transition: color 0.3s ease;
 }
 
+a:hover {
+    color: #007bff;
+}
+
 ul {
     list-style: none;
 }
 
+/* Images */
 img {
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
 .container {
@@ -222,55 +230,97 @@ img {
     color: #555;
 }
 
-/* Products Section */
-.products {
-    background: #f8f9fa;
+/* Dashboard Section */
+.dashboard {
     padding: 3rem 1rem;
+    background: #f8f9fa;
     text-align: center;
 }
 
-.products h2 {
+.dashboard h2 {
     font-size: 2rem;
     color: #007bff;
     margin-bottom: 2rem;
 }
 
-.product-carousel {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding-bottom: 1rem;
+/* Testimonials Section */
+.testimonials {
+    background: #007bff;
+    color: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
 }
 
-.product-item {
-    flex: 0 0 auto;
-    background: #fff;
-    border: 1px solid #ddd;
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-slider {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.testimonial {
+    background: #0056b3;
+    padding: 1.5rem;
     border-radius: 10px;
-    padding: 1rem;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.product-item:hover {
-    transform: scale(1.05);
-}
-
-.product-item img {
-    border-radius: 10px;
+.testimonial p {
     margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
-.product-item h3 {
+.testimonial footer {
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact {
+    padding: 3rem 1rem;
+    background: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
     color: #007bff;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.product-item p {
-    color: #555;
+.contact form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact form input,
+.contact form textarea {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #f8f9fa;
+}
+
+.contact form button {
+    padding: 1rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact form button:hover {
+    background: #0056b3;
 }
 
 /* Footer */
@@ -279,20 +329,4 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-}
-
-footer ul {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
-
-footer ul li a {
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-footer ul li a:hover {
-    color: #007bff;
 }
