@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muntjac Group Resources - The ultimate platform for IT, healthcare, and corporate solutions.">
-    <meta name="keywords" content="Business Solutions, IT Services, Healthcare, Corporate Tools, Social Media Features">
+    <meta name="description" content="The ultimate platform combining social, video, and marketplace features.">
+    <meta name="keywords" content="Social Network, Video Streaming, Marketplace, Events, Advanced Dashboard">
     <meta name="author" content="Muntjac Group">
-    <title>Muntjac Group Resources</title>
+    <title>Muntjac Group Resources - Advanced</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
 </head>
 <body>
     <!-- Preloader -->
@@ -24,11 +24,11 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#products">Products</a></li>
+                    <li><a href="#profile">Profile</a></li>
                     <li><a href="#feed">Feed</a></li>
-                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#marketplace">Marketplace</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#videos">Videos</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -38,91 +38,73 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h2>Innovate. Empower. Succeed.</h2>
-            <p>Leading the way in IT, healthcare, and corporate solutions for over a decade.</p>
-            <a href="#about" class="btn-primary">Explore More</a>
+            <h2>Welcome to the Ultimate Social Hub</h2>
+            <p>Connecting you to a world of opportunities and innovation.</p>
+            <a href="#profile" class="btn-primary">Get Started</a>
         </div>
     </section>
 
-    <!-- About Us -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>Muntjac Group Resources is a pioneer in providing advanced business tools and services that drive innovation and growth.</p>
-        <div class="stats">
-            <div>
-                <h3>10+</h3>
-                <p>Years of Experience</p>
-            </div>
-            <div>
-                <h3>500+</h3>
-                <p>Global Clients</p>
-            </div>
-            <div>
-                <h3>2000+</h3>
-                <p>Projects Delivered</p>
-            </div>
+    <!-- Profile Section -->
+    <section id="profile" class="profile">
+        <h2>Your Profile</h2>
+        <div class="profile-card">
+            <img src="assets/avatar.png" alt="Avatar">
+            <h3>John Doe</h3>
+            <p>Software Engineer | Tech Enthusiast</p>
+            <button class="btn-primary">Edit Profile</button>
         </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Healthcare Solutions</h3>
-                <p>Top-tier medical tools and equipment.</p>
-            </div>
-            <div class="service-card">
-                <h3>IT Infrastructure</h3>
-                <p>Robust IT systems for seamless operations.</p>
-            </div>
-            <div class="service-card">
-                <h3>Corporate Tools</h3>
-                <p>Efficient tools to enhance productivity.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Feed Section (Inspired by Facebook/LinkedIn) -->
+    <!-- Feed Section -->
     <section id="feed" class="feed">
-        <h2>Social Feed</h2>
+        <h2>Activity Feed</h2>
         <div class="feed-post">
             <div class="feed-user">
-                <img src="assets/user1.jpg" alt="User 1">
-                <div>
-                    <h3>John Doe</h3>
-                    <p>2 hours ago</p>
-                </div>
+                <img src="assets/user1.jpg" alt="User">
+                <p>Jane Smith <span>@janesmith</span></p>
             </div>
-            <p>Excited to announce our new partnership with XYZ Corp!</p>
-            <img src="assets/post1.jpg" alt="Post Image">
+            <p>Excited to share my new project with the community!</p>
             <div class="feed-actions">
                 <button>Like</button>
                 <button>Comment</button>
                 <button>Share</button>
             </div>
         </div>
+        <!-- Repeat posts dynamically -->
     </section>
 
-    <!-- Video Section (Inspired by TikTok/YouTube) -->
-    <section id="videos" class="videos">
-        <h2>Featured Videos</h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                <p>How to Build a Successful Business</p>
-            </div>
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/l9vhwaLSy1M" frameborder="0" allowfullscreen></iframe>
-                <p>Latest Trends in IT</p>
+    <!-- Marketplace -->
+    <section id="marketplace" class="marketplace">
+        <h2>Buy & Sell</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="assets/product1.jpg" alt="Product">
+                <h3>Product Name</h3>
+                <p>$49.99</p>
+                <button class="btn-primary">Buy Now</button>
             </div>
         </div>
     </section>
 
-    <!-- Dashboard Section -->
-    <section id="dashboard" class="dashboard">
-        <h2>Performance Dashboard</h2>
-        <canvas id="chart"></canvas>
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <h2>Upcoming Events</h2>
+        <div class="event-card">
+            <h3>Tech Meetup 2024</h3>
+            <p>Dec 10, 2024 | San Francisco</p>
+            <button class="btn-primary">RSVP</button>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <h2>Trending Videos</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/example" frameborder="0" allowfullscreen></iframe>
+                <p>How to Build Scalable Web Apps</p>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
@@ -142,34 +124,22 @@
     </footer>
 
     <script>
-        // Preloader
-        window.onload = function () {
-            const preloader = document.getElementById('preloader');
-            preloader.style.display = 'none';
-        };
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
-            });
+        // Real-time Chat Initialization (Example)
+        const socket = io('https://your-socket-server.com');
+        socket.on('connect', () => {
+            console.log('Connected to chat server');
         });
 
-        // Chart.js - Dashboard
+        // Chart.js Example
         const ctx = document.getElementById('chart').getContext('2d');
         const chart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                 datasets: [{
-                    label: 'Revenue Growth',
+                    label: 'Engagement',
                     data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
                     borderColor: 'rgba(0, 123, 255, 1)',
-                    borderWidth: 1
                 }]
             }
         });
