@@ -24,23 +24,38 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li>
+                        <a href="#about">About Us</a>
+                        <ul class="dropdown">
+                            <li><a href="#milestones">Milestones</a></li>
+                            <li><a href="#team">Our Team</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#products">Products</a></li>
                     <li><a href="#feed">Feed</a></li>
                     <li><a href="#dashboard">Dashboard</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <form class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button>🔍</button>
+            </form>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="assets/hero-bg.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
             <h2>Innovate. Empower. Succeed.</h2>
             <p>Leading the way in IT, healthcare, and corporate solutions for over a decade.</p>
-            <a href="#about" class="btn-primary">Explore More</a>
+            <div class="hero-buttons">
+                <a href="#about" class="btn-primary">Explore More</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
         </div>
     </section>
 
@@ -48,19 +63,16 @@
     <section id="about" class="about">
         <h2>About Us</h2>
         <p>Muntjac Group Resources is a pioneer in providing advanced business tools and services that drive innovation and growth.</p>
-        <div class="stats">
-            <div>
-                <h3>10+</h3>
-                <p>Years of Experience</p>
-            </div>
-            <div>
-                <h3>500+</h3>
-                <p>Global Clients</p>
-            </div>
-            <div>
-                <h3>2000+</h3>
-                <p>Projects Delivered</p>
-            </div>
+        <div id="milestones" class="image-gallery">
+            <img src="assets/milestone1.jpg" alt="Milestone 1">
+            <img src="assets/milestone2.jpg" alt="Milestone 2">
+            <img src="assets/milestone3.jpg" alt="Milestone 3">
+        </div>
+        <div id="team" class="testimonials">
+            <blockquote>
+                <p>"Muntjac Group has transformed the way we manage our business."</p>
+                <cite>- Sarah Brown, CEO of XYZ Corp</cite>
+            </blockquote>
         </div>
     </section>
 
@@ -69,16 +81,22 @@
         <h2>Our Services</h2>
         <div class="service-grid">
             <div class="service-card">
+                <img src="assets/healthcare-icon.png" alt="Healthcare Icon">
                 <h3>Healthcare Solutions</h3>
                 <p>Top-tier medical tools and equipment.</p>
+                <button>Learn More</button>
             </div>
             <div class="service-card">
+                <img src="assets/it-icon.png" alt="IT Icon">
                 <h3>IT Infrastructure</h3>
                 <p>Robust IT systems for seamless operations.</p>
+                <button>Learn More</button>
             </div>
             <div class="service-card">
+                <img src="assets/corporate-icon.png" alt="Corporate Icon">
                 <h3>Corporate Tools</h3>
                 <p>Efficient tools to enhance productivity.</p>
+                <button>Learn More</button>
             </div>
         </div>
     </section>
@@ -86,6 +104,10 @@
     <!-- Social Feed Section -->
     <section id="feed" class="feed">
         <h2>Social Feed</h2>
+        <form class="create-post">
+            <textarea placeholder="What's on your mind?" rows="3"></textarea>
+            <button>Post</button>
+        </form>
         <div class="feed-post">
             <div class="feed-user">
                 <img src="assets/user1.jpg" alt="User 1">
@@ -97,24 +119,9 @@
             <p>Excited to announce our new partnership with XYZ Corp!</p>
             <img src="assets/post1.jpg" alt="Post Image">
             <div class="feed-actions">
-                <button>Like</button>
-                <button>Comment</button>
-                <button>Share</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section id="videos" class="videos">
-        <h2>Featured Videos</h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                <p>How to Build a Successful Business</p>
-            </div>
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/l9vhwaLSy1M" frameborder="0" allowfullscreen></iframe>
-                <p>Latest Trends in IT</p>
+                <button>Like <span>12</span></button>
+                <button>Comment <span>3</span></button>
+                <button>Share <span>5</span></button>
             </div>
         </div>
     </section>
@@ -122,57 +129,28 @@
     <!-- Dashboard Section -->
     <section id="dashboard" class="dashboard">
         <h2>Performance Dashboard</h2>
-        <canvas id="chart"></canvas>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form action="https://example.com/submit" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <canvas id="line-chart"></canvas>
+        <canvas id="bar-chart"></canvas>
     </section>
 
     <!-- Footer -->
     <footer>
+        <div class="quick-links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="assets/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="assets/twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="assets/linkedin-icon.png" alt="LinkedIn"></a>
+        </div>
         <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // Preloader
-        window.onload = function () {
-            const preloader = document.getElementById('preloader');
-            preloader.style.display = 'none';
-        };
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
-            });
-        });
-
-        // Chart.js - Dashboard
-        const ctx = document.getElementById('chart').getContext('2d');
-        const chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Revenue Growth',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
-                    borderColor: 'rgba(0, 123, 255, 1)',
-                    borderWidth: 1
-                }]
-            }
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
