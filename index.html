@@ -3,32 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muntjac Group Resources: Innovative Solutions and Exceptional Services">
-    <meta name="keywords" content="Muntjac Group Resources, Medical Equipment, Office Supplies, IT Solutions">
+    <meta name="description" content="Muntjac Group Resources - Your one-stop solution for healthcare, IT, and corporate needs.">
+    <meta name="keywords" content="Healthcare, IT Solutions, Wellness, Office Supplies">
     <meta name="author" content="Muntjac Group Resources">
     <title>Muntjac Group Resources</title>
     <link rel="stylesheet" href="static/css/styles.css">
     <link rel="icon" href="assets/logo.png" type="image/png">
+    <!-- SEO Metadata -->
+    <meta property="og:title" content="Muntjac Group Resources">
+    <meta property="og:description" content="Innovative solutions for healthcare, IT, and corporate needs.">
+    <meta property="og:image" content="assets/og_image.jpg">
+    <meta property="og:url" content="https://muntjacgroup.com">
 </head>
 <body>
-    <!-- 3D Canvas Background -->
-    <div id="canvas-container">
-        <canvas id="backgroundCanvas"></canvas>
-    </div>
-
     <!-- Header Section -->
-    <header id="header">
-        <div class="header-container">
+    <header>
+        <div class="container">
             <img src="assets/logo.png" alt="Muntjac Group Logo" class="logo">
             <nav>
                 <ul>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#faq">FAQs</a></li>
                     <li><a href="#blog">Blog</a></li>
+                    <li><a href="#faq">FAQs</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -36,134 +37,133 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <h1>Welcome to Muntjac Group Resources</h1>
-        <p>Your partner in innovation and exceptional services since 2023.</p>
-        <button onclick="scrollToSection('about')">Discover More</button>
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Muntjac Group Resources</h1>
+            <p>Delivering excellence in healthcare, IT, and corporate solutions.</p>
+            <button onclick="scrollToSection('about')">Explore More</button>
+        </div>
+        <div class="hero-carousel">
+            <div class="carousel-item">
+                <img src="assets/hero1.jpg" alt="Healthcare Solutions">
+                <p>Revolutionizing Healthcare with Advanced Technology</p>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/hero2.jpg" alt="IT Excellence">
+                <p>Building Smarter IT Solutions</p>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/hero3.jpg" alt="Wellness Products">
+                <p>Innovative Wellness for Better Living</p>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <h2>About Us</h2>
         <p>
-            Muntjac Group Resources specializes in delivering high-quality medical equipment, laboratory tools, office supplies, and IT solutions.
-            Our commitment to innovation and efficiency ensures we meet and exceed client expectations.
+            At Muntjac Group Resources, we deliver tailored solutions for businesses, healthcare providers, and corporate offices. Our goal is to innovate and exceed expectations in every project.
         </p>
-        <div>
-            <img src="assets/about_image.jpg" alt="About Us Image" class="about-image">
+        <div class="stats">
+            <div>
+                <h3>10+ Years</h3>
+                <p>Industry Experience</p>
+            </div>
+            <div>
+                <h3>1000+ Clients</h3>
+                <p>Across Multiple Sectors</p>
+            </div>
+            <div>
+                <h3>500+ Projects</h3>
+                <p>Successfully Delivered</p>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services">
         <h2>Our Services</h2>
-        <ul>
-            <li>Medical Equipment and Consumables</li>
-            <li>Laboratory Tools and Furniture</li>
-            <li>Office Equipment and Supplies</li>
-            <li>IT Solutions and Maintenance</li>
-            <li>Building Maintenance</li>
-            <li>Event Equipment and Services</li>
-        </ul>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2>Our Portfolio</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="assets/project1.jpg" alt="Project 1">
-                <p>Lab Equipment Installation</p>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="assets/service1.jpg" alt="Healthcare">
+                <h3>Healthcare Solutions</h3>
+                <p>Comprehensive medical equipment for professionals.</p>
             </div>
-            <div class="portfolio-item">
-                <img src="assets/project2.jpg" alt="Project 2">
-                <p>Nationwide Office Supplies</p>
+            <div class="service-item">
+                <img src="assets/service2.jpg" alt="IT Infrastructure">
+                <h3>IT Infrastructure</h3>
+                <p>Custom IT systems for seamless business operations.</p>
             </div>
-            <div class="portfolio-item">
-                <img src="assets/project3.jpg" alt="Project 3">
-                <p>IT Infrastructure Setup</p>
+            <div class="service-item">
+                <img src="assets/service3.jpg" alt="Office Tools">
+                <h3>Office Supplies</h3>
+                <p>High-quality supplies for professional environments.</p>
             </div>
-            <div class="portfolio-item">
-                <img src="assets/project4.jpg" alt="Project 4">
-                <p>Custom Safety Solutions</p>
+            <div class="service-item">
+                <img src="assets/service4.jpg" alt="Wellness">
+                <h3>Wellness Products</h3>
+                <p>Revolutionizing rehabilitation with advanced tools.</p>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team">
-        <h2>Meet Our Team</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <img src="assets/team1.jpg" alt="Team Member 1">
-                <h3>Nuril Naim Ilham</h3>
-                <p>Chief Executive Officer</p>
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="assets/product1.jpg" alt="Ergonomic Chair">
+                <h3>Ergonomic Chair</h3>
+                <p>Enhance productivity with comfort-focused design.</p>
             </div>
-            <div class="team-member">
-                <img src="assets/team2.jpg" alt="Team Member 2">
-                <h3>Sarah Lee</h3>
-                <p>Operations Manager</p>
+            <div class="product-card">
+                <img src="assets/product2.jpg" alt="Rehab Equipment">
+                <h3>Rehabilitation Tools</h3>
+                <p>State-of-the-art equipment for effective therapy.</p>
             </div>
-            <div class="team-member">
-                <img src="assets/team3.jpg" alt="Team Member 3">
-                <h3>Mohammed Ali</h3>
-                <p>Head of IT</p>
+            <div class="product-card">
+                <img src="assets/product3.jpg" alt="Portable Devices">
+                <h3>Portable Medical Devices</h3>
+                <p>Innovative healthcare solutions on-the-go.</p>
             </div>
-            <div class="team-member">
-                <img src="assets/team4.jpg" alt="Team Member 4">
-                <h3>Aisha Patel</h3>
-                <p>Marketing Head</p>
+            <div class="product-card">
+                <img src="assets/product4.jpg" alt="Lab Tools">
+                <h3>Precision Lab Equipment</h3>
+                <p>Tools designed for accuracy and reliability.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonials-container">
-            <blockquote>
-                <p>"Muntjac Group transformed our office with their innovative solutions."</p>
-                <footer>- John Doe, CEO of Innovate Tech</footer>
-            </blockquote>
-            <blockquote>
-                <p>"Excellent service! Highly recommended."</p>
-                <footer>- Jane Smith, Head of Procurement</footer>
-            </blockquote>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>What does Muntjac Group do?</h3>
-            <p>We provide innovative solutions for medical, IT, and office needs.</p>
-        </div>
-        <div class="faq-item">
-            <h3>How can I contact you?</h3>
-            <p>Email us at muntjac.group@gmail.com or call us at +6011-21800890.</p>
         </div>
     </section>
 
     <!-- Blog Section -->
     <section id="blog">
-        <h2>Our Blog</h2>
-        <div class="blog-post">
-            <h3>Top Trends in Medical Equipment</h3>
-            <p>Discover the latest innovations in the medical industry.</p>
-            <a href="#">Read More</a>
-        </div>
-        <div class="blog-post">
-            <h3>How to Optimize Your Office for Productivity</h3>
-            <p>Learn how to create a workspace that boosts efficiency.</p>
-            <a href="#">Read More</a>
+        <h2>From Our Blog</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="assets/blog1.jpg" alt="Blog Post">
+                <h3>Top Trends in IT Infrastructure</h3>
+                <p>Stay updated on the latest advancements in IT systems.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="assets/blog2.jpg" alt="Medical Innovations">
+                <h3>Medical Innovations to Watch</h3>
+                <p>Explore breakthroughs in healthcare technology.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="assets/blog3.jpg" alt="Wellness Products">
+                <h3>Wellness for Modern Lifestyles</h3>
+                <p>Discover how wellness products are changing lives.</p>
+                <a href="#">Read More</a>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
+        <form action="https://formspree.io/f/example" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
@@ -173,11 +173,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
-        <p><a href="#privacy-policy">Privacy Policy</a> | <a href="#terms-of-use">Terms of Use</a></p>
+        <p>&copy; 2024 Muntjac Group Resources. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
-
-    <!-- External Scripts -->
-    <script src="static/js/scripts.js"></script>
 </body>
 </html>
