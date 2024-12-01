@@ -1,4 +1,4 @@
-/* Reset and Global Styles */
+/* General Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +13,20 @@ body {
     overflow-x: hidden;
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
 a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #007bff;
 }
 
 ul {
@@ -27,13 +38,7 @@ img {
     height: auto;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* Preloader */
+/* Preloader Styles */
 #preloader {
     position: fixed;
     top: 0;
@@ -65,7 +70,7 @@ img {
     }
 }
 
-/* Header */
+/* Header Styles */
 .header {
     background: #007bff;
     color: #fff;
@@ -110,7 +115,6 @@ img {
     color: #fff;
     text-align: center;
     padding: 5rem 1rem;
-    position: relative;
 }
 
 .hero h2 {
@@ -137,91 +141,44 @@ img {
     background: #003d80;
 }
 
-/* About Section */
-.about {
-    background: #f8f9fa;
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 2rem;
-    color: #007bff;
-    margin-bottom: 1rem;
-}
-
-.about p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.stats {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-}
-
-.stats div {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.stats div h3 {
-    font-size: 2rem;
-    color: #007bff;
-}
-
-.stats div p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Services Section */
-.services {
+/* Profile Section */
+.profile {
     background: #fff;
     padding: 3rem 1rem;
     text-align: center;
 }
 
-.services h2 {
-    font-size: 2rem;
-    color: #007bff;
-    margin-bottom: 2rem;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
+.profile-card {
+    max-width: 400px;
+    margin: auto;
     background: #f8f9fa;
-    border: 1px solid #ddd;
+    padding: 2rem;
     border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.service-card:hover {
-    transform: scale(1.05);
-}
-
-.service-card h3 {
-    color: #007bff;
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     margin-bottom: 1rem;
 }
 
-.service-card p {
-    color: #555;
+.profile-card h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
 }
 
-/* Social Feed */
+.profile-card p {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.profile-card .btn-primary {
+    padding: 0.5rem 1rem;
+}
+
+/* Feed Section */
 .feed {
     background: #f8f9fa;
     padding: 3rem 1rem;
@@ -238,10 +195,8 @@ img {
     background: #fff;
     padding: 1.5rem;
     border-radius: 10px;
+    margin-bottom: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin: auto;
 }
 
 .feed-user {
@@ -260,54 +215,107 @@ img {
 .feed-actions button {
     background: #007bff;
     color: #fff;
-    border: none;
     padding: 0.5rem 1rem;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
-    margin-right: 5px;
+    margin-right: 0.5rem;
 }
 
 .feed-actions button:hover {
     background: #0056b3;
 }
 
-/* Videos Section */
-.videos {
-    padding: 3rem 1rem;
+/* Marketplace Section */
+.marketplace {
     background: #fff;
+    padding: 3rem 1rem;
     text-align: center;
 }
 
-.videos h2 {
+.marketplace h2 {
     font-size: 2rem;
     color: #007bff;
     margin-bottom: 2rem;
 }
 
-.video-grid {
+.product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
-.video-card {
+.product-card {
     background: #f8f9fa;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.product-card .btn-primary {
+    padding: 0.5rem 1rem;
+}
+
+/* Event Section */
+.events {
+    background: #f8f9fa;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.event-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.event-card p {
+    margin-bottom: 1rem;
+}
+
+/* Videos Section */
+.videos {
+    background: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
 .video-card iframe {
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.video-card p {
-    font-size: 1rem;
-    color: #555;
 }
 
 /* Footer */
@@ -316,5 +324,4 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    margin-top: 3rem;
 }
