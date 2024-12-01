@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: #f8f9fa;
+    background: #f4f4f4;
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
@@ -179,19 +179,6 @@ img {
     color: #555;
 }
 
-.btn-secondary {
-    background: #555;
-    color: #fff;
-    padding: 0.7rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.btn-secondary:hover {
-    background: #333;
-}
-
 /* Services Section */
 .services {
     background: #fff;
@@ -234,154 +221,100 @@ img {
     color: #555;
 }
 
-.btn-link {
-    color: #007bff;
-    text-decoration: underline;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.btn-link:hover {
-    color: #0056b3;
-}
-
-/* Dashboard Section */
-.dashboard {
-    padding: 3rem 1rem;
+/* Social Feed */
+.feed {
     background: #f8f9fa;
+    padding: 3rem 1rem;
     text-align: center;
 }
 
-.dashboard h2 {
+.feed h2 {
     font-size: 2rem;
     color: #007bff;
     margin-bottom: 2rem;
 }
 
-/* Testimonials Section */
-.testimonials {
-    background: #007bff;
-    color: #fff;
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
-.testimonials h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.testimonial-slider {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-}
-
-.testimonial {
-    background: #0056b3;
+.feed-post {
+    background: #fff;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial p {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-}
-
-.testimonial footer {
-    font-weight: bold;
-}
-
-/* Careers Section */
-.careers {
-    background: #f8f9fa;
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
-.careers h2 {
-    font-size: 2rem;
-    color: #007bff;
     margin-bottom: 2rem;
+    max-width: 600px;
+    margin: auto;
 }
 
-.job-listings {
-    list-style: none;
-    padding: 0;
+.feed-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.job-listings li {
-    margin-bottom: 1.5rem;
+.feed-user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
-.job-listings h3 {
-    color: #333;
-}
-
-.job-listings p {
-    color: #555;
-}
-
-.job-listings button {
-    padding: 0.7rem 1.5rem;
+.feed-actions button {
     background: #007bff;
     color: #fff;
     border: none;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-right: 5px;
 }
 
-.job-listings button:hover {
+.feed-actions button:hover {
     background: #0056b3;
 }
 
-/* Blog Section */
-.blog {
-    background: #fff;
+/* Videos Section */
+.videos {
     padding: 3rem 1rem;
+    background: #fff;
     text-align: center;
 }
 
-.blog h2 {
+.videos h2 {
     font-size: 2rem;
     color: #007bff;
     margin-bottom: 2rem;
 }
 
-.blog-grid {
+.video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.blog-post {
+.video-card {
     background: #f8f9fa;
     padding: 1.5rem;
     border-radius: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
-    transition: transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.blog-post:hover {
-    transform: scale(1.05);
-}
-
-.blog-post h3 {
-    color: #007bff;
+.video-card iframe {
+    width: 100%;
+    border-radius: 10px;
     margin-bottom: 1rem;
 }
 
-.blog-post p {
+.video-card p {
+    font-size: 1rem;
     color: #555;
 }
 
+/* Footer */
 footer {
     background: #333;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    margin-top: 3rem;
 }
