@@ -1,0 +1,344 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header */
+.header {
+    background: #007BFF;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.header .nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.header .nav-links li a {
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.header .nav-links li a:hover {
+    background: #0056b3;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.4)), url('assets/hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero button {
+    background: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.hero button:hover {
+    background: #003d80;
+    transform: scale(1.05);
+}
+
+/* Hero Slider */
+.hero-slider {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slider .slide {
+    flex: 0 0 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-slider .slide img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-slider .slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* About Section */
+#about {
+    padding: 3rem 1rem;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+#about h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+#about p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: auto;
+    gap: 2rem;
+}
+
+.stats div {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stats div h3 {
+    color: #007BFF;
+    font-size: 2rem;
+}
+
+.stats div p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Services Section */
+#services {
+    background: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+#services h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.service {
+    flex: 1 0 calc(33.333% - 1rem);
+    max-width: calc(33.333% - 1rem);
+    background: #f4f4f4;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.service h3 {
+    color: #007BFF;
+    margin-bottom: 0.5rem;
+}
+
+.service p {
+    color: #555;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+}
+
+/* Team Section */
+#team {
+    padding: 3rem 1rem;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+#team h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.team-member {
+    flex: 1 0 calc(25% - 1rem);
+    max-width: calc(25% - 1rem);
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    margin-bottom: 0.5rem;
+    color: #007BFF;
+}
+
+.team-member p {
+    color: #555;
+}
+
+/* Contact Section */
+#contact {
+    padding: 3rem 1rem;
+    background: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #f9f9f9;
+}
+
+#contact form button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+#contact form button:hover {
+    background: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer a {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-container, .team-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .container {
+        flex-direction: column;
+    }
