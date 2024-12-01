@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muntjac Group Resources - The future of reliable IT and business solutions.">
-    <meta name="keywords" content="IT, Healthcare, Business, Corporate Tools">
-    <meta name="author" content="Muntjac Group Resources">
+    <meta name="description" content="Muntjac Group Resources - The ultimate platform for IT, healthcare, and corporate solutions.">
+    <meta name="keywords" content="Business Solutions, IT Services, Healthcare, Corporate Tools, SEO">
+    <meta name="author" content="Muntjac Group">
     <title>Muntjac Group Resources</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/favicon.ico">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -27,13 +27,8 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li class="dropdown">
-                        <a href="#">More</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#dashboard">Dashboard</a></li>
-                            <li><a href="#testimonials">Testimonials</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -42,27 +37,29 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h2>Your Trusted Partner for Business Growth</h2>
-        <p>Transforming businesses with cutting-edge solutions.</p>
-        <a href="#about" class="btn-primary">Discover More</a>
+        <div class="hero-content">
+            <h2>Innovate. Empower. Succeed.</h2>
+            <p>Leading the way in IT, healthcare, and corporate solutions for over a decade.</p>
+            <a href="#about" class="btn-primary">Explore More</a>
+        </div>
     </section>
 
     <!-- About Us -->
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>We are dedicated to delivering innovative, reliable, and tailored solutions to businesses worldwide.</p>
+        <p>Muntjac Group Resources is a pioneer in providing advanced business tools and services that drive innovation and growth.</p>
         <div class="stats">
             <div>
-                <h3>12+</h3>
-                <p>Years of Excellence</p>
+                <h3>10+</h3>
+                <p>Years of Experience</p>
             </div>
             <div>
-                <h3>750+</h3>
-                <p>Global Partners</p>
+                <h3>500+</h3>
+                <p>Global Clients</p>
             </div>
             <div>
-                <h3>3000+</h3>
-                <p>Successful Projects</p>
+                <h3>2000+</h3>
+                <p>Projects Delivered</p>
             </div>
         </div>
     </section>
@@ -72,16 +69,16 @@
         <h2>Our Services</h2>
         <div class="service-grid">
             <div class="service-card">
-                <h3>Healthcare IT</h3>
-                <p>Providing technology to revolutionize patient care.</p>
+                <h3>Healthcare Solutions</h3>
+                <p>Top-tier medical tools and equipment.</p>
             </div>
             <div class="service-card">
-                <h3>IT Security</h3>
-                <p>Protect your business with our reliable solutions.</p>
+                <h3>IT Infrastructure</h3>
+                <p>Robust IT systems for seamless operations.</p>
             </div>
             <div class="service-card">
-                <h3>Data Analytics</h3>
-                <p>Turn data into actionable insights.</p>
+                <h3>Corporate Tools</h3>
+                <p>Efficient tools to enhance productivity.</p>
             </div>
         </div>
     </section>
@@ -97,11 +94,11 @@
         <h2>What Our Clients Say</h2>
         <div class="testimonial-slider">
             <div class="testimonial">
-                <p>"Muntjac's solutions transformed our operations. Highly reliable!"</p>
+                <p>"Muntjac Group transformed our business. Highly recommend their services."</p>
                 <footer>- Client A</footer>
             </div>
             <div class="testimonial">
-                <p>"Innovative and timely solutions. A trustworthy partner!"</p>
+                <p>"Exceptional service and support. A true industry leader."</p>
                 <footer>- Client B</footer>
             </div>
         </div>
@@ -114,7 +111,7 @@
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
@@ -126,38 +123,33 @@
     <script>
         // Preloader
         window.onload = function() {
-            document.getElementById('preloader').style.display = 'none';
+            const preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
         };
 
-        // Smooth Scrolling
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener("click", function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
                 });
             });
         });
 
-        // Chart.js Integration for Dashboard
+        // Chart.js - Dashboard
         const ctx = document.getElementById('chart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
+        const chart = new Chart(ctx, {
+            type: 'line',
             data: {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                 datasets: [{
-                    label: 'Revenue',
-                    data: [15, 25, 18, 30, 22, 19],
-                    backgroundColor: ['#007bff', '#0056b3', '#003d80', '#001f40', '#007bff', '#0056b3'],
+                    label: 'Revenue Growth',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    borderWidth: 1
                 }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    }
-                }
             }
         });
     </script>
