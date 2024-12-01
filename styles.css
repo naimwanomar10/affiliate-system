@@ -16,6 +16,7 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.3s ease;
 }
 
 ul {
@@ -221,97 +222,55 @@ img {
     color: #555;
 }
 
-/* Dashboard Section */
-.dashboard {
-    padding: 3rem 1rem;
+/* Products Section */
+.products {
     background: #f8f9fa;
+    padding: 3rem 1rem;
     text-align: center;
 }
 
-.dashboard h2 {
+.products h2 {
     font-size: 2rem;
     color: #007bff;
     margin-bottom: 2rem;
 }
 
-/* Testimonials Section */
-.testimonials {
-    background: #007bff;
-    color: #fff;
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
-.testimonials h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.testimonial-slider {
+.product-carousel {
     display: flex;
     gap: 2rem;
-    justify-content: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
 }
 
-.testimonial {
-    background: #0056b3;
-    padding: 1.5rem;
+.product-item {
+    flex: 0 0 auto;
+    background: #fff;
+    border: 1px solid #ddd;
     border-radius: 10px;
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.testimonial p {
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    border-radius: 10px;
     margin-bottom: 1rem;
-    font-size: 1rem;
 }
 
-.testimonial footer {
-    font-weight: bold;
-}
-
-/* Contact Section */
-.contact {
-    padding: 3rem 1rem;
-    background: #fff;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 2rem;
+.product-item h3 {
     color: #007bff;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.contact form {
-    max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contact form input,
-.contact form textarea {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    background: #f8f9fa;
-}
-
-.contact form button {
-    padding: 1rem;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.contact form button:hover {
-    background: #0056b3;
+.product-item p {
+    color: #555;
 }
 
 /* Footer */
@@ -320,4 +279,20 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+footer ul li a {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #007bff;
 }
