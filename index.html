@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muntjac Group Resources - The ultimate platform for IT, healthcare, and corporate solutions.">
-    <meta name="keywords" content="Business Solutions, IT Services, Healthcare, Corporate Tools, Social Media Features">
+    <meta name="description" content="Muntjac Group Resources - A platform for IT, healthcare, and corporate solutions.">
+    <meta name="keywords" content="Business, IT Services, Healthcare, Corporate Tools">
     <meta name="author" content="Muntjac Group">
     <title>Muntjac Group Resources</title>
     <link rel="stylesheet" href="styles.css">
@@ -20,34 +20,27 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1>Muntjac Group Resources</h1>
+            <h1 class="logo">Muntjac Group Resources</h1>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li class="dropdown">
                         <a href="#about" class="dropbtn">About Us</a>
                         <div class="dropdown-content">
-                            <a href="#vision">Our Vision</a>
-                            <a href="#mission">Our Mission</a>
-                            <a href="#team">Our Team</a>
+                            <a href="#vision">Vision</a>
+                            <a href="#mission">Mission</a>
+                            <a href="#team">Team</a>
                         </div>
                     </li>
                     <li class="dropdown">
                         <a href="#services" class="dropbtn">Services</a>
                         <div class="dropdown-content">
-                            <a href="#healthcare">Healthcare Solutions</a>
-                            <a href="#it">IT Infrastructure</a>
+                            <a href="#healthcare">Healthcare</a>
+                            <a href="#it">IT Solutions</a>
                             <a href="#corporate">Corporate Tools</a>
                         </div>
                     </li>
-                    <li class="dropdown">
-                        <a href="#products" class="dropbtn">Products</a>
-                        <div class="dropdown-content">
-                            <a href="#featured">Featured Products</a>
-                            <a href="#new">New Arrivals</a>
-                            <a href="#popular">Most Popular</a>
-                        </div>
-                    </li>
+                    <li><a href="#products">Products</a></li>
                     <li><a href="#feed">Feed</a></li>
                     <li><a href="#dashboard">Dashboard</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -65,81 +58,46 @@
         </div>
     </section>
 
-    <!-- About Us -->
+    <!-- About Section -->
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>Muntjac Group Resources is a pioneer in providing advanced business tools and services that drive innovation and growth.</p>
+        <p>Muntjac Group Resources provides advanced business tools and services to drive innovation and growth.</p>
         <div class="stats">
-            <div>
+            <div class="stat-card">
                 <h3>10+</h3>
                 <p>Years of Experience</p>
             </div>
-            <div>
+            <div class="stat-card">
                 <h3>500+</h3>
                 <p>Global Clients</p>
             </div>
-            <div>
+            <div class="stat-card">
                 <h3>2000+</h3>
                 <p>Projects Delivered</p>
             </div>
         </div>
     </section>
 
-    <!-- Services -->
+    <!-- Services Section -->
     <section id="services" class="services">
         <h2>Our Services</h2>
         <div class="service-grid">
             <div class="service-card">
+                <img src="assets/healthcare.jpg" alt="Healthcare">
                 <h3>Healthcare Solutions</h3>
                 <p>Top-tier medical tools and equipment.</p>
             </div>
             <div class="service-card">
+                <img src="assets/it.jpg" alt="IT">
                 <h3>IT Infrastructure</h3>
                 <p>Robust IT systems for seamless operations.</p>
             </div>
             <div class="service-card">
+                <img src="assets/corporate.jpg" alt="Corporate">
                 <h3>Corporate Tools</h3>
                 <p>Efficient tools to enhance productivity.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Social Feed Section -->
-    <section id="feed" class="feed">
-        <h2>Social Feed</h2>
-        <div class="feed-post">
-            <div class="feed-user">
-                <img src="assets/user1.jpg" alt="User 1">
-                <div>
-                    <h3>John Doe</h3>
-                    <p>2 hours ago</p>
-                </div>
-            </div>
-            <p>Excited to announce our new partnership with XYZ Corp!</p>
-            <img src="assets/post1.jpg" alt="Post Image">
-            <div class="feed-actions">
-                <button>Like</button>
-                <button>Comment</button>
-                <button>Share</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dashboard Section -->
-    <section id="dashboard" class="dashboard">
-        <h2>Performance Dashboard</h2>
-        <canvas id="chart"></canvas>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form action="https://example.com/submit" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
     </section>
 
     <!-- Footer -->
@@ -153,32 +111,6 @@
             const preloader = document.getElementById('preloader');
             preloader.style.display = 'none';
         };
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
-            });
-        });
-
-        // Chart.js - Dashboard
-        const ctx = document.getElementById('chart').getContext('2d');
-        const chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Revenue Growth',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
-                    borderColor: 'rgba(0, 123, 255, 1)',
-                    borderWidth: 1
-                }]
-            }
-        });
     </script>
 </body>
 </html>
