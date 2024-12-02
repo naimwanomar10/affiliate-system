@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muntjac Group Resources - A platform for IT, healthcare, and corporate solutions.">
+    <meta name="description" content="Muntjac Group Resources - Advanced solutions for IT, healthcare, and corporate needs.">
     <meta name="keywords" content="Business, IT Services, Healthcare, Corporate Tools">
-    <meta name="author" content="Muntjac Group">
     <title>Muntjac Group Resources</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Preloader -->
@@ -24,25 +22,10 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#about" class="dropbtn">About Us</a>
-                        <div class="dropdown-content">
-                            <a href="#vision">Vision</a>
-                            <a href="#mission">Mission</a>
-                            <a href="#team">Team</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#services" class="dropbtn">Services</a>
-                        <div class="dropdown-content">
-                            <a href="#healthcare">Healthcare</a>
-                            <a href="#it">IT Solutions</a>
-                            <a href="#corporate">Corporate Tools</a>
-                        </div>
-                    </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#feed">Feed</a></li>
-                    <li><a href="#dashboard">Dashboard</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -53,15 +36,15 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h2>Innovate. Empower. Succeed.</h2>
-            <p>Leading the way in IT, healthcare, and corporate solutions for over a decade.</p>
-            <a href="#about" class="btn-primary">Explore More</a>
+            <p>Delivering solutions that drive success in IT, healthcare, and corporate industries.</p>
+            <a href="#about" class="btn-primary">Learn More</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>Muntjac Group Resources provides advanced business tools and services to drive innovation and growth.</p>
+        <p>We are dedicated to providing advanced solutions that empower businesses globally.</p>
         <div class="stats">
             <div class="stat-card">
                 <h3>10+</h3>
@@ -83,33 +66,34 @@
         <h2>Our Services</h2>
         <div class="service-grid">
             <div class="service-card">
-                <img src="assets/healthcare.jpg" alt="Healthcare">
+                <img src="assets/healthcare.jpg" alt="Healthcare Solutions">
                 <h3>Healthcare Solutions</h3>
-                <p>Top-tier medical tools and equipment.</p>
+                <p>Providing top-notch medical tools and services.</p>
             </div>
             <div class="service-card">
-                <img src="assets/it.jpg" alt="IT">
+                <img src="assets/it.jpg" alt="IT Infrastructure">
                 <h3>IT Infrastructure</h3>
-                <p>Robust IT systems for seamless operations.</p>
+                <p>Optimized IT systems for seamless operations.</p>
             </div>
             <div class="service-card">
-                <img src="assets/corporate.jpg" alt="Corporate">
+                <img src="assets/corporate.jpg" alt="Corporate Tools">
                 <h3>Corporate Tools</h3>
-                <p>Efficient tools to enhance productivity.</p>
+                <p>Streamlined tools to enhance workplace productivity.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <script>
         // Preloader
         window.onload = function () {
-            const preloader = document.getElementById('preloader');
-            preloader.style.display = 'none';
+            document.getElementById('preloader').style.display = 'none';
         };
     </script>
 </body>
