@@ -18,8 +18,13 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1 class="logo">Muntjac Group Resources</h1>
+            <h1 class="logo">Muntjac Group</h1>
             <nav>
+                <button class="hamburger" aria-label="Toggle navigation">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -36,7 +41,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h2>Innovate. Empower. Succeed.</h2>
-            <p>Delivering solutions that drive success in IT, healthcare, and corporate industries.</p>
+            <p>Delivering cutting-edge IT, healthcare, and corporate solutions to empower your business.</p>
             <a href="#about" class="btn-primary">Learn More</a>
         </div>
     </section>
@@ -44,7 +49,7 @@
     <!-- About Section -->
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>We are dedicated to providing advanced solutions that empower businesses globally.</p>
+        <p>We are committed to providing innovative tools and services that empower businesses worldwide.</p>
         <div class="stats">
             <div class="stat-card">
                 <h3>10+</h3>
@@ -83,11 +88,22 @@
         </div>
     </section>
 
+    <!-- Feed Section -->
+    <section id="feed" class="feed">
+        <h2>Latest Updates</h2>
+        <div class="feed-item">
+            <h3>New IT Infrastructure Service Launched</h3>
+            <p>Our new IT services will transform how businesses operate.</p>
+        </div>
+        <div class="feed-item">
+            <h3>Corporate Tools Upgrade</h3>
+            <p>Explore our enhanced corporate tools to boost productivity.</p>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 Muntjac Group Resources. All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -95,6 +111,13 @@
         window.onload = function () {
             document.getElementById('preloader').style.display = 'none';
         };
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
     </script>
 </body>
 </html>
