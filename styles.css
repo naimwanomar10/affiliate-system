@@ -79,39 +79,55 @@ body.dark-mode .header {
 }
 
 /* ================================
-   Header Styles
+   Header Styles (Mind-Blowing Edition)
 ================================ */
 .header {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px var(--glass-border);
+    background: var(--glass-bg); /* Glassmorphism effect */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: 1rem 0;
-    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+    border-bottom: 2px solid transparent;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed), border-color 0.4s ease-in-out;
 }
 
 .header.sticky {
-    background: var(--gradient-primary);
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+    background: var(--gradient-primary); /* Stunning gradient background */
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.5);
+    border-bottom: 2px solid var(--accent-color); /* Dynamic border when sticky */
+    animation: slideIn 0.6s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Larger logo for better impact */
     font-weight: bold;
     color: var(--text-dark);
-    transition: color var(--transition-speed);
+    text-transform: uppercase;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow behind the text */
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
 }
 
 .header.sticky .logo {
     color: var(--text-light);
+    text-shadow: 0 4px 15px rgba(255, 255, 255, 0.5); /* Glow effect when sticky */
+    transform: scale(1.1); /* Slight size increase when sticky */
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem; /* Increased gap for spacing */
     list-style: none;
     transition: all var(--transition-speed);
 }
@@ -119,10 +135,17 @@ body.dark-mode .header {
 .nav-links a {
     color: var(--text-dark);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem; /* Slightly larger font size */
     position: relative;
-    transition: color var(--transition-speed);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color); /* Dynamic color on hover */
+    transform: translateY(-5px); /* Adds a floating hover effect */
 }
 
 .nav-links a::after {
@@ -131,43 +154,119 @@ body.dark-mode .header {
     left: 0;
     bottom: -5px;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: var(--primary-color);
-    transition: width var(--transition-speed);
+    box-shadow: 0 0 8px var(--primary-color), 0 0 15px var(--primary-color); /* Neon glow effect */
+    transition: width var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .nav-links a:hover::after {
-    width: 100%;
+    width: 100%; /* Full underline on hover */
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Highlight text color */
+}
+
+/* Animated Gradient Hover Effect */
+.nav-links a {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 4s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .hamburger {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 7px;
     cursor: pointer;
+    transition: transform var(--transition-speed);
+}
+
+.hamburger:hover {
+    transform: scale(1.2); /* Subtle grow effect on hover */
 }
 
 .hamburger .line {
-    width: 25px;
-    height: 3px;
+    width: 30px;
+    height: 4px;
     background: var(--text-dark);
-    transition: background var(--transition-speed);
+    border-radius: 2px;
+    transition: all var(--transition-speed);
+}
+
+.hamburger:hover .line {
+    background: var(--primary-color); /* Dynamic color change */
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); /* Neon glow effect */
+}
+
+/* For Mobile */
+.nav-links.active {
+    flex-direction: column;
+    gap: 1.5rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--gradient-secondary);
+    padding: 1.5rem 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: opacity var(--transition-speed), transform var(--transition-speed);
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.nav-links.active.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Crazy Animated Borders */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-image: linear-gradient(white, white), var(--gradient-primary);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    transition: transform 0.3s;
+    z-index: -1;
+}
+
+.nav-links a:hover::before {
+    transform: scale(1.05); /* Border effect on hover */
 }
 
 /* ================================
-   Hero Section
+   Hero Section (Mind-Blowing Edition)
 ================================ */
 .hero {
     background: url('assets/cleaning and maintenance services.png') center/cover no-repeat;
     color: #fff;
     text-align: center;
-    padding: 10rem 0;
+    padding: 12rem 0;
     position: relative;
     z-index: 1;
+    overflow: hidden; /* Prevents elements from overflowing */
 }
 
 .hero::before {
@@ -177,39 +276,119 @@ body.dark-mode .header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Optional dark overlay */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)); /* Dark overlay with gradient */
     z-index: -1; /* Sends it behind the content */
+    opacity: 0.8;
+    animation: pulseOverlay 5s infinite alternate; /* Dynamic pulsing effect */
 }
 
-.btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: scale(1.1);
-    background-color: #0056b3;
+@keyframes pulseOverlay {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .hero h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
-    animation: fadeInDown 1s ease-in-out;
+    animation: slideIn 1s ease-out;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient text effect */
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    animation: fadeInUp 1s ease-in-out;
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeIn 1.2s ease-out;
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
 }
 
-@keyframes fadeInDown {
+.btn-primary {
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(255, 110, 196, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.btn-primary:hover::before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1) rotate(3deg); /* Adds a playful hover effect */
+    box-shadow: 0 12px 40px rgba(255, 110, 196, 1);
+}
+
+/* Floating Decorative Elements */
+.hero .floating-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    animation: floatCircle 8s infinite alternate ease-in-out;
+    pointer-events: none;
+}
+
+.hero .circle1 {
+    top: 10%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.hero .circle2 {
+    bottom: 20%;
+    right: 20%;
+    animation-delay: 3s;
+}
+
+@keyframes floatCircle {
+    from {
+        transform: translateY(-20px) scale(1);
+    }
+    to {
+        transform: translateY(20px) scale(1.1);
+    }
+}
+
+/* Animation Effects */
+@keyframes slideIn {
     from {
         opacity: 0;
         transform: translateY(-50px);
@@ -220,7 +399,7 @@ body.dark-mode .header {
     }
 }
 
-@keyframes fadeInUp {
+@keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(50px);
@@ -228,6 +407,30 @@ body.dark-mode .header {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Parallax Effect */
+.hero {
+    perspective: 800px;
+}
+
+.hero .parallax {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: url('assets/cleaning and maintenance services.png') center/cover no-repeat;
+    transform: translateZ(-2px) scale(1.5);
+    z-index: -2;
+    animation: parallaxMove 30s linear infinite alternate;
+}
+
+@keyframes parallaxMove {
+    from {
+        transform: translateZ(-2px) scale(1.5) translateX(-10%);
+    }
+    to {
+        transform: translateZ(-2px) scale(1.5) translateX(10%);
     }
 }
 
