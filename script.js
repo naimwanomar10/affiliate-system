@@ -5,10 +5,13 @@ const preloader = document.getElementById('preloader');
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links a');
+const header = document.querySelector('.header');
+const sections = document.querySelectorAll('section');
 
 // ===============================
 // Utility Functions
 // ===============================
+
 /**
  * Toggles a CSS class on an element.
  * @param {HTMLElement} element - The element to toggle the class on.
@@ -45,21 +48,23 @@ function removeClass(element, className) {
 // ===============================
 // Preloader Management
 // ===============================
+
 /**
  * Hides the preloader once the page has fully loaded.
  */
 function hidePreloader() {
     if (preloader) {
         preloader.style.opacity = '0';
-        setTimeout(() => preloader.style.display = 'none', 500); // Smooth transition
+        setTimeout(() => preloader.style.display = 'none', 500); // Smooth fade-out
     }
 }
 
 // ===============================
 // Hamburger Menu Management
 // ===============================
+
 /**
- * Toggles the navigation menu for mobile view.
+ * Toggles the mobile navigation menu.
  */
 function toggleMenu() {
     toggleClass(navLinks, 'active');
@@ -77,29 +82,26 @@ function closeMenuOnClick() {
 }
 
 // ===============================
-// Scroll Event Handlers
+// Sticky Header Management
 // ===============================
+
 /**
- * Adds a sticky class to the header when the user scrolls down.
+ * Adds or removes the sticky class to the header based on scroll position.
  */
 function handleStickyHeader() {
-    const header = document.querySelector('.header');
-    const scrollPosition = window.scrollY;
-
-    if (header) {
-        if (scrollPosition > 50) {
-            addClass(header, 'sticky');
-        } else {
-            removeClass(header, 'sticky');
-        }
+    if (window.scrollY > 50) {
+        addClass(header, 'sticky');
+    } else {
+        removeClass(header, 'sticky');
     }
 }
 
 // ===============================
-// Smooth Scroll Implementation
+// Smooth Scrolling
 // ===============================
+
 /**
- * Smoothly scrolls to the target section when a navigation link is clicked.
+ * Enables smooth scrolling to sections when navigation links are clicked.
  */
 function enableSmoothScroll() {
     links.forEach(link => {
@@ -110,7 +112,7 @@ function enableSmoothScroll() {
 
             if (targetSection) {
                 window.scrollTo({
-                    top: targetSection.offsetTop,
+                    top: targetSection.offsetTop - header.offsetHeight,
                     behavior: 'smooth',
                 });
             }
@@ -119,17 +121,16 @@ function enableSmoothScroll() {
 }
 
 // ===============================
-// Intersection Observer for Animations
+// Section Visibility and Animations
 // ===============================
+
 /**
- * Animates sections when they enter the viewport.
+ * Observes sections and triggers animations when they enter the viewport.
  */
 function observeSections() {
-    const sections = document.querySelectorAll('section');
-
     const observerOptions = {
         root: null,
-        threshold: 0.1,
+        threshold: 0.1, // Trigger when 10% of the section is visible
     };
 
     const observerCallback = (entries, observer) => {
@@ -147,30 +148,80 @@ function observeSections() {
 }
 
 // ===============================
-// DOM Content Loaded Event
+// Form Submission Handling
 // ===============================
-document.addEventListener('DOMContentLoaded', () => {
-    // Hide the preloader
+
+/**
+ * Handles the contact form submission.
+ */
+function handleFormSubmission() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+
+        if (name && email && message) {
+            alert(`Thank you, ${name}! Your message has been sent.`);
+            form.reset(); // Clear the form fields
+        } else {
+            alert('Please fill out all fields before submitting.');
+        }
+    });
+}
+
+// ===============================
+// Active Navigation Highlight
+// ===============================
+
+/**
+ * Highlights the active navigation link based on the current section.
+ */
+function highlightActiveNav() {
+    const scrollPosition = window.scrollY + header.offsetHeight + 10;
+
+    links.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (
+            section.offsetTop <= scrollPosition &&
+            section.offsetTop + section.offsetHeight > scrollPosition
+        ) {
+            addClass(link, 'active');
+        } else {
+            removeClass(link, 'active');
+        }
+    });
+}
+
+// ===============================
+// Initialization
+// ===============================
+
+/**
+ * Initializes all the scripts after the DOM is fully loaded.
+ */
+function init() {
     hidePreloader();
-
-    // Set up hamburger menu toggle
-    if (hamburger) {
-        hamburger.addEventListener('click', toggleMenu);
-    }
-
-    // Close menu on link click
-    closeMenuOnClick();
-
-    // Enable smooth scrolling
     enableSmoothScroll();
-
-    // Observe sections for animations
+    closeMenuOnClick();
     observeSections();
+    handleFormSubmission();
+}
+
+// ===============================
+// Event Listeners
+// ===============================
+
+document.addEventListener('DOMContentLoaded', () => {
+    init();
 });
 
-// ===============================
-// Scroll Event Listener
-// ===============================
 window.addEventListener('scroll', () => {
     handleStickyHeader();
+    highlightActiveNav();
 });
